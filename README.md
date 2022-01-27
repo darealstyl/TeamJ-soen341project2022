@@ -3,5 +3,6 @@
 
 Team Members:
 Jonah Ball ->
-Jaskirat kaur
-Carson Senthilkumar
+Jaskirat kaur ->
+Carson Senthilkumar ->
+Haris Mahmood ->
