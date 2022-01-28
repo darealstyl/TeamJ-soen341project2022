@@ -1,3 +1,9 @@
+// Please not the provided example page is just provided to showcase how a page can be added and created with React for the  rest of the team and will not be used (HomeScreen.js) specifically the product tab.
+
+// The json format was taken from:
+// https://concordia.udemy.com/course/django-with-react-an-ecommerce-website/learn/lecture/24573288#overview
+
+
 import React from 'react'
 import {Row, Col} from 'react-bootstrap'
 
