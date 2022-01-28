@@ -1,0 +1,47 @@
+Team J
+
+Date: 20 Jan 2022
+Time: 4pm
+
+Minutes taken by: Zack
+
+All group members present
+
+Meeting purpose: initial discussion of project, distribution of tasks for sprint 1
+
+Agenda/decision items: select language/framework to use, distribute tasks for sprint 1, decide on user stories
+
+1. github repository
+	repository already created by Jonah, has added the rest of the team as collaborators, will create Sprint 1 folder
+
+2. language/framework
+	Wassim suggests using Django with React, sends video resource
+	Jaskirat sends additional Reacts JS video resource
+	Cason notes Django seems good to learn and useful right now, many jobs ask for it
+
+	Decision:
+		move forward with using Django/React
+
+3. task distribution for sprint 1
+	to do: readme file/documentation, user stories, commits/requests initiated by every team member
+	Haris volunteers to do readme file
+	user stories will be assigned at the next meeting
+
+	Decisions:
+		Haris will do the readme file/documentation, each team member will commit their own name to the readme file
+		user stories will be assigned at the next meeting
+
+4. topics for 4 user stories
+	Decision:
+		cart, seller's page, log-in/sign up and browsing
+
+Tasks:
+	Haris - readme: description of project and project approach/technology
+	Everyone - commit name and role to readme file
+	TBD - four user stories
+
+Next meeting: 	Wednesday, 26 Jan 2022 at 4pm
+
+Next meeting agenda:
+	Decide who will write the user stories (cart, log-in/sign up, browsing, seller inventory/item)
+	Task Breakdown
