@@ -1,0 +1,20 @@
+Navigating the cart page
+
+The cart must be opened by clicking a cart button in the top right corner of the screen, which is visible from any front-store page (ex: home page, product page, browsing page, etc.).
+At all times, the cart button will have a badge showing the number of items currently in the cart.
+
+From the cart window, a list of items currently in the cart is visible. Each item is displayed in the same amount of space, with divider lines separating the items.
+At the left of each item space, a square image of the item is shown.
+The item name is displayed in bold text next to the image.
+
+To the right of the item name, the unit price of the item is shown.
+Next to the unit price, there is a field to modify the quantity of the item to be purchased.
+If the quantity selected is greater than the seller of the item has in stock, a warning will pop-up indicating the maximum quantity of the item available.
+
+Next to the quantity, the subtotal price of the item is shown.
+When the quantity of an item is modified, the item subtotal updates accordingly (as well as the overall cart subtotal).
+
+Each item in the cart has a "Remove" button to remove the item from the cart.
+
+At the bottom of the item list, the subtotal (price before tax) is shown. Below the subtotal, there is a "Proceed to checkout" button.
+Upon clicking "Proceed to checkout", the customer is taken to the checkout page, where they enter payment and shipping information to complete their order.
