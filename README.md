@@ -42,10 +42,3 @@ Core Features:
 * post items in the application for purchase
 * Handling profiles
 * view details of sales
-
-
-
-
-
-
-
