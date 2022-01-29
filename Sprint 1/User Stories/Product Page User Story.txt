@@ -1,0 +1,14 @@
+Viewing a product page
+
+At the top of the product page, the category path of the product is shown (ex: Electronics > Camera, Photo & Video > Digital Cameras). The user can click on any of these categories to navigate to that category page.
+
+A photo of the product is shown. Below the photo are preview thumbnails of other photos of the product (if applicable). The user can click on these thumbnails to view the other photos of the product.
+
+The name of the product is shown in a bold, large font. Below the name, the product rating is shown on a scale of 5. The unit price of the item is displayed.
+
+If applicable to the product being viewed, the user is able to select different options for the product (ex: colour, size).
+If an option is not available (due to being out of stock, or for another reason), the option will still be visible, but is grey and cannot be selected.
+
+Below the product options, a description of the product is shown, containing relevant information about the product.
+
+At the bottom of the product page there is an "Add to cart" button. Next to this button, there is a quantity field, which can be used to modify the quantity of the item to be added to the cart. The default value of this field is 1.
