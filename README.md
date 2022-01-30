@@ -1,30 +1,30 @@
-# COMP 341 Group J Project
+# SOEN 341 Group J Project
 Amazon style website development repository
 
 Team Members:
-(Full Name -> GitHub Username)
+(Full Name -> GitHub Username -> Student ID)
 * Jonah Ball -> darealstyl
-* Jaskirat kaur -> jaskiratkaur1906 -> 40138320
+* Jaskirat Kaur -> jaskiratkaur1906 -> 40138320
 * Carson Senthilkumar -> CarsonSSk -> 40173515
 * Haris Mahmood -> haris2055 -> 40135271
-* Louisa-Lina Meziane -> louisa-lina ->40133119
+* Louisa-Lina Meziane -> louisa-lina -> 40133119
 * Zachary Bruce -> z-bruce -> 40136585
 * Wassim Nijaoui -> Nijaoui-Wassim -> 40121366
 
 Roles/Strengths:
-* Haris Mahmood: Experience with online customer applications. Incharge of ReadMe file description for Sprint 1. Incharge of aid with Sign up page development and cart. Documentation of Meeting Minutes
+* Haris Mahmood: Experience with online customer applications. In charge of ReadMe file description for Sprint 1. In charge of aid with Sign up page development and cart. Documentation of Meeting Minutes
 
-* Jonah Ball: Incharge of managing and creating the repository, 2 core features for sprint 1 documentation for user stories. Will focus on the implementation of browsing.
+* Jonah Ball: In charge of managing and creating the repository, 2 core features for sprint 1 documentation for user stories. Will focus on the implementation of browsing.
 
-* Louisa-Lina Meziane: Experience with online customer applications. Incharge of descrption of task breakdowns for the entirety of the project. Will focus on the implementation of sign up page/login page.
+* Louisa-Lina Meziane: Experience with online customer applications. In charge of description of task breakdowns for the entirety of the project. Will focus on the implementation of sign up page/login page.
 
-* Jaskirat kaur: Incharge of implementing browsing page.
+* Jaskirat Kaur: In charge of implementing browsing page.
 
-* Zachary Bruce: Incharge of documenting Meeting Minutes, documenting 2 core features of user stories. Incharge of implementing Product page.
+* Zachary Bruce: In charge of documenting Meeting Minutes, documenting 2 core features of user stories. In charge of implementing Product page.
 
-* Carson Senthilkumar: Experience with online customer applications. Incharge of submission, implementation of cart page.
+* Carson Senthilkumar: Experience with online customer applications. In charge of submission, implementation of cart page.
 
-* Wassim Nijaoui: Incharge of implementation of Sellerpage, point out possible issue and any resolution. Creation of a skeleton frame for our website.
+* Wassim Nijaoui: In charge of implementation of Seller page, point out possible issue and any resolution. Creation of a skeleton frame for our website.
 
 Languages to be used:
 * React (Front End)

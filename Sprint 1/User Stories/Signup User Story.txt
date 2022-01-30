@@ -6,13 +6,12 @@ The first form requires you to fill out your full name.
 
 The second form asks you to fill in the email you wish to use to login to your account. The email must be a valid account that you can access in case of a forgotten password or other notification.
 
-The third form to be filled out is the password you would like to choose for your account. The password is recommended to have at least 1 uppecase letter, 1 number and 1 special character. The password must also be at least 8 characters long, but not longer than 20 characters.
+The third form to be filled out is the password you would like to choose for your account. The password is recommended to have at least 1 uppercase letter, 1 number and 1 special character. The password must also be at least 8 characters long, but not longer than 20 characters.
 
-The final form to be filled out is the confirm password, which is just a retype of the password in the third form in order to confirm that you have correctly entered your password before commiting to creating your account.
+The final form to be filled out is the confirm password, which is just a retype of the password in the third form in order to confirm that you have correctly entered your password before committing to creating your account.
 
 Once all the forms have been filled out, the user may submit the form by pressing the Create Account button.
 
-If the user has improperly filled out any of the fields, that field will turn red and indicate what theuser must do in order to proceed, such as entering a valid email or password.
+If the user has improperly filled out any of the fields, that field will turn red and indicate what the user must do in order to proceed, such as entering a valid email or password.
 
 If all the forms have been filled out properly then the form will submit and the user will be directed to a confirmation page that displays the confirmation of creation of the account. The new user's account will be entered in to the database. The user will then be able to proceed to the Sign In page where they can sign in to their new account with the username and password they just signed up with.
-
