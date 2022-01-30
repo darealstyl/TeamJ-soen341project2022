@@ -1,0 +1,39 @@
+Group J
+
+Date: 29 Jan 2022
+Time: 9pm
+
+Chair: Haris Mahmood
+
+Secretary: Zachary Bruce
+
+Participants: Louisa-Lina Meziane, Jaskirat Kaur, Carson Senthilkumar, Wassim Nijaoui
+
+Meeting purpose: Finalization of Sprint 1 work
+
+Agenda/decision items:
+    confirmation of user stories progress
+    confirmation of remaining Sprint 1 tasks
+
+1. Assigning pull requests
+    Everyone must create a pull request and assign it to someone else for review.
+    Decision: Everyone will add their own student ID to the readme file and assign the pull request to another team member.
+
+2. Add additional info to readme file
+    Decision: If applicable, team members should add additional info about themselves in the 'Roles' section of the readme.
+
+3. User stories
+    Zachary has completed two, Jonah has completed one and is working on the remaining one.
+    Issues must be created for each user story.
+    Decision: Carson will be creating issues for the user stories.
+
+4. Meeting minutes
+    Meeting minutes must be stored in the Wiki section of the project repository.
+    Decision: Zachary will add the meeting minutes to the Wiki.
+
+5. Sprint 1 submission
+    Decision: Carson will complete the Moodle submission of Sprint 1.
+
+Next meeting: TBD
+
+Next meeting agenda: TBD
