@@ -1,6 +1,6 @@
 # COMP 341 Group J Project
 Amazon style website development repository
- 
+
 Team Members:
 (Full Name -> GitHub Username)
 * Jonah Ball -> darealstyl
@@ -8,7 +8,7 @@ Team Members:
 * Carson Senthilkumar -> CarsonSSk
 * Haris Mahmood -> haris2055
 * Louisa-Lina Meziane -> louisa-lina
-* Zachary Bruce -> z-bruce
+* Zachary Bruce -> z-bruce (40136585)
 * Wassim Nijaoui -> Nijaoui-Wassim
 
 Roles/Strengths:
@@ -26,7 +26,7 @@ Roles/Strengths:
 
 * Wassim Nijaoui: Incharge of implementation of Sellerpage, point out possible issue and any resolution. Creation of a skeleton frame for our website.
 
-Languages to be used: 
+Languages to be used:
 * React (Front End)
 * Django (Back End)
 
