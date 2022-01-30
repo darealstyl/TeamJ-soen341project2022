@@ -1,0 +1,16 @@
+Add a Product:
+
+To begin adding a product, the user must be logged in to their seller account and be on the seller account page.
+Once on the seller account page, the user must select 'Add a Product'. This will bring you to the Add a Product page.
+The first prompt the user will encounter will be to answer whether you wish to add a product that already exists on the website or an entirely new product.
+
+Should the the user select 'Add an existing product', the user will be asked to search for the product. 
+
+
+If the product is found, then the user can select the product and press the 'Add this product' button.
+The user will be redirected to the information page about this product where they may modify the information about the product, as well as detail the price and quantity of the item they wish to publish. Once this is finished, the user will press the 'Submit' button to publish their product for review by the Admins.
+
+If the product is not found, then the user will have to select 'The product I wish to add does not exist yet'. 
+In this case, the user will first be asked to select a category they wish to publish their product in. Next, the user will have to complete all of the information required to publish the product. This information includes, but is not limited to: title, UPC, brand, description, and photo of the product. Once the information is completed, the price and quantity may be detailed and the user may press the 'Submit' button to publish their product for review by the Admins.
+
+The user will then have to wait until the submit request is processed by the admins to see the product appear on their seller account.
