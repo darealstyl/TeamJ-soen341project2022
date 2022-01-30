@@ -22,7 +22,7 @@ Roles/Strengths:
 
 * Zachary Bruce: Incharge of documenting Meeting Minutes, documenting 2 core features of user stories. Incharge of implementing Product page.
 
-* Carson Senthilkumar: Incharge of submission, implementation of cart page.
+* Carson Senthilkumar: Experience with online customer applications. Incharge of submission, implementation of cart page.
 
 * Wassim Nijaoui: Incharge of implementation of Sellerpage, point out possible issue and any resolution. Creation of a skeleton frame for our website.
 
