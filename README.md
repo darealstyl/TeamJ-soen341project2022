@@ -4,7 +4,7 @@ Amazon style website development repository
 Team Members:
 (Full Name -> GitHub Username)
 * Jonah Ball -> darealstyl
-* Jaskirat kaur -> jaskiratkaur1906
+* Jaskirat kaur -> jaskiratkaur1906 -> 40138320
 * Carson Senthilkumar -> CarsonSSk -> 40173515
 * Haris Mahmood -> haris2055 -> 40135271
 * Louisa-Lina Meziane -> louisa-lina ->40133119
