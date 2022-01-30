@@ -1,3 +1,5 @@
+"As a user, I want to be able to view the different products and find what I'm looking for."
+
 Viewing a product page
 
 At the top of the product page, the category path of the product is shown (ex: Electronics > Camera, Photo & Video > Digital Cameras). The user can click on any of these categories to navigate to that category page.

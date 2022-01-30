@@ -1,3 +1,5 @@
+"As a seller, I want to be able to add additional items to my inventory."
+
 Add a Product:
 
 To begin adding a product, the user must be logged in to their seller account and be on the seller account page.

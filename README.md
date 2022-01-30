@@ -3,7 +3,7 @@ Amazon style website development repository
 
 Team Members:
 (Full Name -> GitHub Username -> Student ID)
-* Jonah Ball -> darealstyl -> 40178421 
+* Jonah Ball -> darealstyl -> 40178421
 * Jaskirat Kaur -> jaskiratkaur1906 -> 40138320
 * Carson Senthilkumar -> CarsonSSk -> 40173515
 * Haris Mahmood -> haris2055 -> 40135271
