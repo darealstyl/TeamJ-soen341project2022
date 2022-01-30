@@ -3,13 +3,13 @@ Amazon style website development repository
 
 Team Members:
 (Full Name -> GitHub Username -> Student ID)
-* Jonah Ball -> darealstyl -> 40178421
+* Jonah Ball -> darealstyl ->
 * Jaskirat Kaur -> jaskiratkaur1906 -> 40138320
 * Carson Senthilkumar -> CarsonSSk -> 40173515
 * Haris Mahmood -> haris2055 -> 40135271
 * Louisa-Lina Meziane -> louisa-lina -> 40133119
 * Zachary Bruce -> z-bruce -> 40136585
-* Wassim Nijaoui -> Nijaoui-Wassim -> 40121366 
+* Wassim Nijaoui -> Nijaoui-Wassim -> 40121366
 
 Roles/Strengths:
 * Haris Mahmood: Experience with online customer applications. In charge of ReadMe file description for Sprint 1. In charge of aid with Sign up page development and cart. Documentation of Meeting Minutes
