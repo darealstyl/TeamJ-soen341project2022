@@ -1,6 +1,6 @@
 # COMP 341 Group J Project
 Amazon style website development repository
- 
+
 Team Members:
 (Full Name -> GitHub Username)
 * Jonah Ball -> darealstyl
@@ -8,8 +8,8 @@ Team Members:
 * Carson Senthilkumar -> CarsonSSk -> 40173515
 * Haris Mahmood -> haris2055 -> 40135271
 * Louisa-Lina Meziane -> louisa-lina ->40133119
-* Zachary Bruce -> z-bruce
-* Wassim Nijaoui -> Nijaoui-Wassim
+* Zachary Bruce -> z-bruce -> 40136585
+* Wassim Nijaoui -> Nijaoui-Wassim -> 40121366
 
 Roles/Strengths:
 * Haris Mahmood: Experience with online customer applications. Incharge of ReadMe file description for Sprint 1. Incharge of aid with Sign up page development and cart. Documentation of Meeting Minutes
@@ -26,7 +26,7 @@ Roles/Strengths:
 
 * Wassim Nijaoui: Incharge of implementation of Sellerpage, point out possible issue and any resolution. Creation of a skeleton frame for our website.
 
-Languages to be used: 
+Languages to be used:
 * React (Front End)
 * Django (Back End)
 
