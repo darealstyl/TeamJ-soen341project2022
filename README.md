@@ -4,12 +4,12 @@ Amazon style website development repository
 Team Members:
 (Full Name -> GitHub Username)
 * Jonah Ball -> darealstyl
-* Jaskirat kaur -> jaskiratkaur1906
+* Jaskirat kaur -> jaskiratkaur1906 -> 40138320
 * Carson Senthilkumar -> CarsonSSk -> 40173515
-* Haris Mahmood -> haris2055
-* Louisa-Lina Meziane -> louisa-lina
-* Zachary Bruce -> z-bruce (40136585)
-* Wassim Nijaoui -> Nijaoui-Wassim
+* Haris Mahmood -> haris2055 -> 40135271
+* Louisa-Lina Meziane -> louisa-lina ->40133119
+* Zachary Bruce -> z-bruce -> 40136585
+* Wassim Nijaoui -> Nijaoui-Wassim -> 40121366
 
 Roles/Strengths:
 * Haris Mahmood: Experience with online customer applications. Incharge of ReadMe file description for Sprint 1. Incharge of aid with Sign up page development and cart. Documentation of Meeting Minutes
@@ -22,7 +22,7 @@ Roles/Strengths:
 
 * Zachary Bruce: Incharge of documenting Meeting Minutes, documenting 2 core features of user stories. Incharge of implementing Product page.
 
-* Carson Senthilkumar: Incharge of submission, implementation of cart page.
+* Carson Senthilkumar: Experience with online customer applications. Incharge of submission, implementation of cart page.
 
 * Wassim Nijaoui: Incharge of implementation of Sellerpage, point out possible issue and any resolution. Creation of a skeleton frame for our website.
 
