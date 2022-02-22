@@ -18,7 +18,7 @@ function App() {
                 <Route path='/' element={<BrowsingScreen />} exact />
                 <Route path="/browse" element={<BrowsingScreen />} exact></Route>
                 <Route path='user-profile' element={<UserProfileScreen />} exact />
-                <Route path='login' element={<SignIn />}/>
+                <Route path='sign-in' element={<SignIn />}/>
                 <Route path='sign-up' element={<SignUp />}/>
             </Routes>
           </Container>

@@ -61,4 +61,4 @@ function Rating({value, text, color}) {
   )
 }
 
-export default Rating
+export default Rating;

@@ -34,7 +34,7 @@ function BrowsingScreen() {
           </Col>
       </Row>
       <br></br>
-      <h3>Explore more articles</h3>
+      <h3>Explore more products</h3>
             <Row>
 
           {products.slice(2, 6).map(product => (
