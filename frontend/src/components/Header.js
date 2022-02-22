@@ -23,27 +23,27 @@ function Header() {
                   </LinkContainer>                  
               </Nav>
               <Nav className="ms-auto"> {/*aligned to right side of navbar*/}
-                  <LinkContainer to="sign-in">
+                  <LinkContainer to="/sign-in">
                       <Nav.Link>
                         <i className="fas fa-user"></i> Sign In
                       </Nav.Link>
                   </LinkContainer>
                   <NavDropdown title="Manage Account" id="basic-nav-dropdown">
-                      <LinkContainer to="user-profile">
+                      <LinkContainer to="/user-profile">
                           <NavDropdown.Item>My Account</NavDropdown.Item>
                       </LinkContainer>
-                      <LinkContainer to="orders">
+                      <LinkContainer to="/orders">
                         <NavDropdown.Item>My Orders</NavDropdown.Item>
                       </LinkContainer>
-                      <LinkContainer to="seller-profile">
-                          <NavDropdown.Item href="/seller_account">Seller Profile</NavDropdown.Item>
+                      <LinkContainer to="/seller-profile">
+                          <NavDropdown.Item>Seller Profile</NavDropdown.Item>
                       </LinkContainer>
                       <NavDropdown.Divider />
-                      <LinkContainer to="admin">
+                      <LinkContainer to="/admin">
                           <NavDropdown.Item>Settings</NavDropdown.Item>
                       </LinkContainer>
                   </NavDropdown>
-                  <LinkContainer to="cart">
+                  <LinkContainer to="/cart">
                       <Nav.Link><i className="fas fa-shopping-cart"></i> Cart</Nav.Link>
                   </LinkContainer>
               </Nav>

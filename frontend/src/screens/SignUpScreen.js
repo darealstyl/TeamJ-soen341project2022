@@ -1,7 +1,7 @@
 import React from "react";
 import { Row, Col, Form, FormGroup, Button } from "react-bootstrap";
 
-function SignUp() {
+function SignUpScreen() {
   return (
     <div>
         <Row className="justify-content-md-center">
@@ -48,4 +48,4 @@ function SignUp() {
   );
 }
 
-export default SignUp;
+export default SignUpScreen;
