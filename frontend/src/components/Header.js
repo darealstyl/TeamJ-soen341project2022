@@ -18,7 +18,7 @@ function Header() {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="me-auto"> {/*aligned to left side of navbar*/}
-                  <LinkContainer to="browse">
+                  <LinkContainer to="/browse">
                       <Nav.Link>Browse</Nav.Link>
                   </LinkContainer>                  
               </Nav>
