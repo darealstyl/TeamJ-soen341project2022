@@ -124,10 +124,4 @@ function UserProfileScreen() {
     )
 }
 
-// updateInfo1()
-// {
-
-// }
-
-
 export default UserProfileScreen;
