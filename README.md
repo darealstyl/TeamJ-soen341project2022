@@ -1,7 +1,6 @@
 # SOEN 341 Group J Project
 Amazon style website development repository
 
-[![Contributors][contributors-shield]][contributors-url]
 Team Members:
 (Full Name -> GitHub Username -> Student ID)
 * Jonah Ball -> darealstyl -> 40178421
@@ -31,9 +30,10 @@ Languages to be used:
 * React (Front End)
 * Django (Back End)
 
-Objective:
+Objective/Information:
 * An online shopping application for customers, that accepts payment options to place orders. User authenticated members would only be able to place orders. The website entails a large variety of departments composed of mobiles, books, apparel, jewelry, infant care, gifts, tools, etc. The order will be shipped to the customer.
 
+Sprint 1
 Core Features:
 * create an account
 * login
@@ -43,3 +43,6 @@ Core Features:
 * post items in the application for purchase
 * Handling profiles
 * view details of sales
+
+
+
