@@ -6,6 +6,7 @@ import BrowsingScreen from './screens/BrowsingScreen';
 import UserProfileScreen from './screens/UserProfileScreen'
 import SignInScreen from './screens/SignInScreen'
 import SignUpScreen from './screens/SignUpScreen'
+import ProductScreen from './screens/ProductScreen'
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
                 <Route path='/user-profile' element={<UserProfileScreen />} exact />
                 <Route path='/sign-in' element={<SignInScreen />} exact />
                 <Route path='/sign-up' element={<SignUpScreen />} exact />
+                <Route path='/product/:id' element={<ProductScreen/>} /> 
             </Routes>
           </Container>
       </main>
