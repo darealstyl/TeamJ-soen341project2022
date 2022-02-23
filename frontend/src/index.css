@@ -33,12 +33,12 @@ main{
   font-size:12px;
   padding-bottom: -12rem;
       position: absolute;
-  bottom:30% !important;
+  bottom:15% !important;
 }
 
 .products_description_review{
       position: absolute;
-  bottom:15% !important;
+  bottom:1% !important;
 }
 
 
