@@ -1,6 +1,7 @@
 # SOEN 341 Group J Project
 Amazon style website development repository
 
+[![Contributors][contributors-shield]][contributors-url]
 Team Members:
 (Full Name -> GitHub Username -> Student ID)
 * Jonah Ball -> darealstyl -> 40178421
