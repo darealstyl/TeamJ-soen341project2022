@@ -8,12 +8,12 @@ import Rating from './Rating'
 function Product({ product }) {
   return (
   <Card className="my-3 py-3 rounded product_container">
-      <a className="product_image" href={'/product/${product._id}'}>
+      <a className="product_image" href={'/product/'+product._id}>
         <Card.Img src={product.image} />
       </a>
 
       <Card.Body>
-        <a href={'/product/${product._id}'}>
+        <a href={'/product/'+product._id}>
             <Card.Title as="div">
                 <strong className="products_description">{product.name}</strong>
             </Card.Title>
