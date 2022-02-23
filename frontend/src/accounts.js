@@ -1,4 +1,4 @@
-let accounts = [
+const accounts = [
     {
       'first_name': 'Jonah',
       'last_name': 'Ball',
@@ -15,4 +15,4 @@ let accounts = [
     }
 ]
 
-export default accounts
+export default accounts;
