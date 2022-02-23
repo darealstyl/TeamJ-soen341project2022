@@ -9,7 +9,7 @@ let accounts = [
       'province': 'Quebec',
       'postal_code': 'A1A 1A1',
       'country': 'Canada',
-      'card#': 12345678,
+      'card_number': 12345678,
       'expiration': '01/01',
       'ccv': 123 
     }
