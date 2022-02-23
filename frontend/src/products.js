@@ -77,6 +77,34 @@ const products = [
     'rating': 4,
     'numReviews': 12,
   },
+   {
+    '_id': '7',
+    'name': 'Logitech HD Pro Webcam',
+    'image': '/images/Webcam.jpg',
+    'description':
+      'Polished, Full HD video calls. The C920x Pro HD Webcam delivers remarkably crisp, clear and detailed images in vibrant colors. HD autofocus and light correction adjust to the conditions to provide consistently high definition, while the five-element glass lens delivers razor-sharp images. Dual mics placed on either side of the lens capture the natural sound of your voice. The 3-month XSplit VCam license enables you to remove, replace and blur your background. Whether for a key Skype call, to demo your skills or create your next YouTube video, the C920x ensures you make a strong impression.',
+    'brand': 'Logitech',
+    'category': 'Electronics',
+    'price': 79.99,
+    'countInStock': 2,
+    'rating': 4.5,
+    'numReviews': 17,
+
+  },
+  {
+    '_id': '8',
+    'name': 'Logitech H390 Wired Headset',
+    'image': '/images/Headset.jpg',
+    'description':
+      'Meet Echo Dot - Our most popular smart speaker with a fabric design. It is our most compact smart speaker that fits perfectly into small space',
+    'brand': 'Logitech',
+    'category': 'Electronics',
+    'price': 41.99,
+    'countInStock': 17,
+    'rating': 3.9,
+    'numReviews': 10,
+
+  },
 ]
 
 
