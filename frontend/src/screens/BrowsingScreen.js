@@ -37,15 +37,7 @@ function BrowsingScreen() {
       <h3>Explore more products</h3>
             <Row>
 
-          {products.slice(2, 6).map(product => (
-              <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
-
-                <Product product={product} />
-
-              </Col>
-          ))}
-
-          {products.slice(1, 5).map(product => (
+          {products.slice(2, 10).map(product => (
               <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
 
                 <Product product={product} />
