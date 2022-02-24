@@ -80,7 +80,7 @@ const products = [
    {
     '_id': '7',
     'name': 'Logitech HD Pro Webcam',
-    'image': '/images/Webcam.jpg',
+'image': '/images/NewWebcam.jpg',
     'description':
       'Polished, Full HD video calls. The C920x Pro HD Webcam delivers remarkably crisp, clear and detailed images in vibrant colors. HD autofocus and light correction adjust to the conditions to provide consistently high definition, while the five-element glass lens delivers razor-sharp images. Dual mics placed on either side of the lens capture the natural sound of your voice. The 3-month XSplit VCam license enables you to remove, replace and blur your background. Whether for a key Skype call, to demo your skills or create your next YouTube video, the C920x ensures you make a strong impression.',
     'brand': 'Logitech',
@@ -105,6 +105,36 @@ const products = [
     'numReviews': 10,
 
   },
+
+  {
+    '_id': '9',
+    'name': 'ASUS Chromebook Flip',
+    'image': '/images/Chrombook.jpg',
+    'description':
+      'Powered by the Intel Core m3-8100Y Processor (up to 3.4 GHz) for super-fast and snappy performance. If you use a ton of tabs or run lots of apps, this has the power to get it all done with ease. Battery: 48WHrs, 3S1P, 3-cell Li-ion',
+    'brand': 'ASUS',
+    'category': 'Electronics',
+    'price': 499.99,
+    'countInStock': 9,
+    'rating': 4.2,
+    'numReviews': 19,
+
+  },
+  {
+    '_id': '10',
+    'name': 'Acer Aspire C27-962-UA91 AIO Desktop',
+    'image': '/images/Desktop.jpg',
+    'description':
+      '10th Generation Intel Core i5-1035G1 Processor (Up to 3.6GHz),27" Full HD Widescreen LED Back-lit Screen',
+    'brand': 'Acer',
+    'category': 'Electronics',
+    'price': 1677.99,
+    'countInStock': 20,
+    'rating': 4.6,
+    'numReviews': 15,
+
+  },
+
 ]
 
 
