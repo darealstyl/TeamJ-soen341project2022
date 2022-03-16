@@ -4,16 +4,28 @@
 // https://concordia.udemy.com/course/django-with-react-an-ecommerce-website/learn/lecture/24573288#overview
 
 
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import {Row, Col, Container, Button} from 'react-bootstrap'
 
 import Product from '../components/Product'
-
-import products from '../products'
+//import { useState } from 'react'
+import axios from 'axios'
 
 
 
 function BrowsingScreen() {
+  const [products, setProducts] = useState([])
+
+  useEffect(() => {
+
+      async function fetchProducts(){
+        const { data } = await axios.get('/api/products/')
+        setProducts(data)
+      }
+
+      fetchProducts();
+  }, [])
+  
   return (
   <div>
       <h3>Trending Products </h3>

@@ -1,4 +1,4 @@
-const products = [
+products = [
   {
     '_id': '1',
     'name': 'Apple MacBook Air (2020)',
@@ -7,7 +7,7 @@ const products = [
       'Apple’s thinnest and lightest notebook gets supercharged with the Apple M1 chip. Tackle your projects with the blazing-fast 8-core CPU. Take graphics-intensive apps and games to the next level with an up to 8-core GPU. And accelerate machine learning tasks with the 16-core Neural Engine. All with a silent, fanless design and the longest battery life ever-up to 18 hours.1 MacBook Air. Still perfectly portable. Just a lot more powerful.',
     'brand': 'Apple',
     'category': 'Electronics',
-    'price': 1+','+270.44,
+    'price': str(1)+','+str(270.44),
     'countInStock': 10,
     'rating': 4.5,
     'numReviews': 12,
@@ -20,7 +20,7 @@ const products = [
       'The Galaxy S21 Ultra 5G gives you the highest resolution you can get on a smartphone at a crystal clear 108 MP. Pinch, crop, and zoom in on your photos to see tiny, unexpected details, while super-fast Laser Focus keeps your focal point clear.',
     'brand': 'Apple',
     'category': 'Electronics',
-    'price': 1+","+650,
+    'price': str(1)+","+str(650),
     'countInStock': 7,
     'rating': 4.0,
     'numReviews': 8,
@@ -89,7 +89,6 @@ const products = [
     'countInStock': 2,
     'rating': 4.5,
     'numReviews': 17,
-
   },
   {
     '_id': '8',
@@ -103,9 +102,7 @@ const products = [
     'countInStock': 17,
     'rating': 3.9,
     'numReviews': 10,
-
   },
-
   {
     '_id': '9',
     'name': 'ASUS Chromebook Flip',
@@ -118,7 +115,6 @@ const products = [
     'countInStock': 9,
     'rating': 4.2,
     'numReviews': 19,
-
   },
   {
     '_id': '10',
@@ -132,10 +128,5 @@ const products = [
     'countInStock': 20,
     'rating': 4.6,
     'numReviews': 15,
-
   },
-
 ]
-
-
-export default products
