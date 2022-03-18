@@ -35,8 +35,11 @@ function Header() {
                       <LinkContainer to="/orders">
                         <NavDropdown.Item>My Orders</NavDropdown.Item>
                       </LinkContainer>
-                      <LinkContainer to="/seller-profile">
+                      <LinkContainer to="/seller/profile">
                           <NavDropdown.Item>Seller Profile</NavDropdown.Item>
+                      </LinkContainer>
+                      <LinkContainer to="/seller/product-list">
+                          <NavDropdown.Item>Product List</NavDropdown.Item>
                       </LinkContainer>
                       <NavDropdown.Divider />
                       <LinkContainer to="/admin">
