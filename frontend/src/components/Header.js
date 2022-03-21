@@ -1,10 +1,58 @@
 import React from "react";
 import { NavDropdown, Navbar, Nav, Container, Row } from "react-bootstrap";
+import axios from "axios";
 import { LinkContainer } from "react-router-bootstrap";
+import { useDispatch, useSelector } from "react-redux";
+import { logout } from "../actions/userActions";
+import { useNavigate } from "react-router-dom"; 
 import { Link } from "react-router-dom";
 import logo from "../logo.png"; // Tell webpack this JS file uses this image
+import { USER_LOGIN_SUCCESS } from "../constants/userConstants";
 
 function Header() {
+
+  const userLogin = useSelector((state) => state.userLogin);
+  const { userInfo } = userLogin;
+
+  let navigate = useNavigate();
+
+  
+
+  const goHome = () => {
+   navigate("/");
+  };
+
+  const dispatch = useDispatch();
+
+  const logoutHandler = () => {
+    dispatch(logout());
+    goHome();
+  };
+  const switchUserMode = async () => {
+    try {
+      const work_mode = !userInfo.work_mode;
+      const config = {
+        headers: {
+          "Content-type": "application/json",
+          Authorization: `Bearer ${userInfo.token}`,
+        },
+      };
+      const { data } = await axios.put(
+        "/api/users/updateusermode/",
+        work_mode,
+        config
+      );
+      dispatch({
+        type: USER_LOGIN_SUCCESS,
+        payload: data,
+      });
+
+      localStorage.setItem("userInfo", JSON.stringify(data));
+    } catch (error) {
+      console.log("error updating the user mode!");
+    }
+  };
+
  return (
     <header>
       <Navbar className="navTheme" variant="dark" expand="lg" collapseOnSelect>
@@ -23,11 +71,19 @@ function Header() {
                   </LinkContainer>                  
               </Nav>
               <Nav className="ms-auto"> {/*aligned to right side of navbar*/}
+
+              {userInfo ? (
+                  <LinkContainer to="/user-profile">
+                    <p className="username_title"> {userInfo.name} </p> 
+                  </LinkContainer>
+                  ) : (
                   <LinkContainer to="/sign-in">
                       <Nav.Link>
                         <i className="fas fa-user"></i> Sign In
                       </Nav.Link>
                   </LinkContainer>
+                )}
+                {userInfo ? (
                   <NavDropdown title="Manage Account" id="basic-nav-dropdown">
                       <LinkContainer to="/user-profile">
                           <NavDropdown.Item>My Account</NavDropdown.Item>
@@ -45,7 +101,13 @@ function Header() {
                       <LinkContainer to="/admin">
                           <NavDropdown.Item>Settings</NavDropdown.Item>
                       </LinkContainer>
+                      
+                      <NavDropdown.Item onClick={logoutHandler}>
+                          <span>Logout</span>
+                      </NavDropdown.Item> 
+                      
                   </NavDropdown>
+                ) : ("")}
                   <LinkContainer to="/cart">
                       <Nav.Link><i className="fas fa-shopping-cart"></i> Cart</Nav.Link>
                   </LinkContainer>
