@@ -115,3 +115,9 @@ main{
 }
 
 
+.username_title{
+  font-weight:bold;
+  color:white;
+  text-align: center;
+  margin: auto;
+}

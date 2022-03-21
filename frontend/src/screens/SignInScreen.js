@@ -66,11 +66,11 @@ const redirect ="/";
       <Row className='py-3'>
         <Col>
           New Customer?{' '}
-          {/* <Link to={redirect ? `/register?redirect=${redirect}` : '/register'}>
-            Register
+          {/* <Link to={redirect ? `/sign-up?redirect=${redirect}` : '/sign-up'}>
+            sign-up
           </Link> */}
-             <Link to={`/register`}>
-            Register
+             <Link to={`/sign-up`}>
+            Sign-up
           </Link>
         </Col>
       </Row>

@@ -7,8 +7,8 @@ import { userLoginReducer, userRegisterReducer } from './reducers/userReducers';
 const reducer = combineReducers({
     productList: productListReducer,
     productDetails: productDetailsReducer,
-     userLogin: userLoginReducer,
-  userRegister: userRegisterReducer,
+    userLogin: userLoginReducer,
+    userRegister: userRegisterReducer,
 });
 
 const cartItemsFromStorage = localStorage.getItem("cartItems")
