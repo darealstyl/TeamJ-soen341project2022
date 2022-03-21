@@ -4,7 +4,7 @@ import axios from "axios";
 import { LinkContainer } from "react-router-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../actions/userActions";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom"; 
 import { Link } from "react-router-dom";
 import logo from "../logo.png"; // Tell webpack this JS file uses this image
 import { USER_LOGIN_SUCCESS } from "../constants/userConstants";
@@ -83,7 +83,7 @@ function Header() {
                       </Nav.Link>
                   </LinkContainer>
                 )}
-
+                {userInfo ? (
                   <NavDropdown title="Manage Account" id="basic-nav-dropdown">
                       <LinkContainer to="/user-profile">
                           <NavDropdown.Item>My Account</NavDropdown.Item>
@@ -101,7 +101,13 @@ function Header() {
                       <LinkContainer to="/admin">
                           <NavDropdown.Item>Settings</NavDropdown.Item>
                       </LinkContainer>
+                      
+                      <NavDropdown.Item onClick={logoutHandler}>
+                          <span>Logout</span>
+                      </NavDropdown.Item> 
+                      
                   </NavDropdown>
+                ) : ("")}
                   <LinkContainer to="/cart">
                       <Nav.Link><i className="fas fa-shopping-cart"></i> Cart</Nav.Link>
                   </LinkContainer>

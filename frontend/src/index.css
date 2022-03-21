@@ -116,8 +116,8 @@ main{
 
 
 .username_title{
+  margin-left:10rem !important;
   font-weight:bold;
   color:white;
-  text-align: center;
   margin: auto;
 }

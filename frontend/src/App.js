@@ -14,12 +14,12 @@ import ProductListScreen from './screens/ProductListScreen'
 function App() {
   return (
     <Router>
-      <Header />
+      <Header /> 
 
       <main className="py-3">
           <Container>
             <Routes>
-                <Route path='/' element={<BrowsingScreen />} exact />
+                <Route path='/' element={<BrowsingScreen />} />
                 <Route path="/browse" element={<BrowsingScreen />} exact />
                 <Route path='/user-profile' element={<UserProfileScreen />} exact />
                 <Route path='/seller/profile' element={<SellerProfileScreen />} exact />

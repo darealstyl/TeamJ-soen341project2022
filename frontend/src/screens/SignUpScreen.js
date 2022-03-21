@@ -47,7 +47,7 @@ const SignUpScreen = () => {
       // console.log("email:", email);
       // console.log("username:", username);
       // console.log("password:", password);
-      dispatch(register(name, email, username, password));
+      dispatch(register(name, email, password));
     }
   };
 
