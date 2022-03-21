@@ -1,0 +1,41 @@
+Team J
+
+Date: 03 March 2022
+Time: 5:20pm-6pm
+
+Chair: Haris Mahmood
+
+Secretary: Jonah Ball
+
+Participants: Louisa-Lina Meziane, Jaskirat Kaur, Carson Senthilkumar, Wassim Nijaoui
+
+Meeting purpose: Further discussion of Sprint 3 and distribution of tasks
+
+Agenda/decision items: Task distribution (for the user stories)
+
+1. Browsing for available items:
+    Able to see product categories, browse through products within that category. Connect with backend and provide addtional features, such as search bar.
+	
+    Decision: 
+        Haris, Louisa will work on the browsing/product features
+
+2. Managing your Profile page: 
+    Able to manage user account information after signing in, storing information in database
+
+    Decision: 
+        Wassim, Jaskirat will work on user profile features
+        
+3. Seller posting an ad: 
+    seller is able to post a product
+
+    Decision: 
+        Zack, Jonah, Carson will work on user profile features
+
+Tasks to be completed before next meeting:
+        Create Issues on GitHub for the 3 user stories 
+        Each group should begin implementing these features
+        Documentation (risks, userstories, tasks, acceptance test, meeting minutes)
+
+Next meeting: TBD
+
+Next meeting agenda: Sprint 4
