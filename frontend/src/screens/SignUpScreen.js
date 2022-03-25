@@ -34,12 +34,48 @@ const SignUpScreen = () => {
 
   const redirect ="/";
 
+  const onclick_password = () => {
+    document.getElementById("password_error").innerHTML ="";
+    return true;
+  }
+
+    const validate_password = (password) => {
+      if (password.length < 9){
+          // dispatch({
+          //     type: AUTH_PASSWORD_VALIDATORS,
+          // })
+          console.log("password is too short");
+          document.getElementById("password_error").innerHTML ="Password is too short";
+          return true;
+      }
+  }
+
+  const check_password_capital = (password) => {
+    if (!password.match(/[A-Z]/)){
+        // dispatch({
+        //     type: AUTH_PASSWORD_VALIDATORS,
+        // })
+        console.log("Password should have at least 1 capital letter");
+        document.getElementById("password_error").innerHTML ="Password should have at least 1 capital letter";
+        setMessage("Password should have at least 1 capital letter");
+        return true;
+    }
+}
 
   const submitHandler = (e) => {
     e.preventDefault();
 
     if (password !== confirmPassword) {
       setMessage("Passwords do not match");
+    }else if(validate_password(password)){
+
+      setMessage("Passwords is too short");
+
+    }else if(check_password_capital(password)){
+
+      setMessage("Password should have at least 1 capital letter");
+
+
     } else {
       const username = email;
 
@@ -50,6 +86,7 @@ const SignUpScreen = () => {
       dispatch(register(name, email, password));
     }
   };
+
 
   return (
     <FormContainer>
@@ -81,8 +118,8 @@ const SignUpScreen = () => {
                         <Form.Control type="email" placeholder="example@email.com" value={email} onChange={(e) => setEmail(e.target.value)}></Form.Control>
                     </FormGroup>
                     <FormGroup controlId="password">
-                        <Form.Label>Password</Form.Label>
-                        <Form.Control type="password" placeholder="••••••••" value={password} onChange={(e) => setPassword(e.target.value)}></Form.Control>
+                        <Form.Label>Password <span id="password_error"></span> </Form.Label>
+                        <Form.Control type="password" placeholder="••••••••" value={password} onClick={(e) => onclick_password()} onChange={(e) => setPassword(e.target.value)}></Form.Control>
                     </FormGroup>
                     <FormGroup controlId="confirm-password">
                         <Form.Label>Confirm Password</Form.Label>
