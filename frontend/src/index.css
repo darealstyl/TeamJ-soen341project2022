@@ -121,3 +121,9 @@ main{
   color:white;
   margin: auto;
 }
+
+#password_error{
+  color:red;
+  font-size:12px;
+  margin-left:10rem;
+}

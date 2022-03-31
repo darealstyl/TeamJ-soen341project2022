@@ -10,6 +10,8 @@ import {
     USER_REGISTER_SUCCESS,
     USER_REGISTER_FAIL,
 
+    AUTH_PASSWORD_VALIDATORS ,
+
 } from '../constants/userConstants'
 
 // import { ORDER_LIST_MY_RESET } from '../constants/orderConstants'
@@ -31,6 +33,7 @@ export const login = (email, password) => async (dispatch) => {
             { 'username': email, 'password': password },
             config
         )
+        
 
         dispatch({
             type: USER_LOGIN_SUCCESS,
@@ -85,7 +88,10 @@ export const register = (name, email, password) => async (dispatch) => {
             payload: data
         })
 
-        localStorage.setItem('userInfo', JSON.stringify(data))
+
+        localStorage.setItem('userInfo', JSON.stringify(data));
+
+
 
     } catch (error) {
         dispatch({
