@@ -1,5 +1,5 @@
 from django.urls import path
-from base.views import user_views as views
+from base.all_views import user_views as views
 
 
 urlpatterns = [
