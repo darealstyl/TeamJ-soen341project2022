@@ -57,6 +57,8 @@ function Rating({value, text, color}) {
             }>
             </i>
         </span>
+
+        {text}
         </div>
   )
 }
