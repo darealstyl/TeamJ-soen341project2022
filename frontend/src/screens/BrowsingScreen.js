@@ -23,11 +23,11 @@ function BrowsingScreen() {
         :
         <div>
             <Row>
-                <Col xs lg="1">
+                {/* <Col xs lg="1">
                   <Button className="previous_button items_button"> <i className="fa fa-chevron-left"></i> </Button>
-                </Col>
+                </Col> */}
 
-                  {products.slice(0, 3).map(product => (
+                  {products.slice(0, 4).map(product => (
                     
                       <Col key={product._id} sm={10} md={6} lg={3} xl={3}>
                         <div >
@@ -36,16 +36,16 @@ function BrowsingScreen() {
                       </Col>
                   ))}
                   
-                  <Col xs lg="2"> 
+                  {/* <Col xs lg="2"> 
                     <Button className="next_button items_button"> <i className="fa fa-chevron-right"></i> </Button>
-                  </Col>
+                  </Col> */}
               </Row>
               <br></br>
               <h3>Explore more products</h3>
                     <Row>
       
       
-                  {products.slice(3, products.length).map(product => (
+                  {products.slice(4, products.length).map(product => (
       
                       <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
       

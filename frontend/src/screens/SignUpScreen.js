@@ -87,7 +87,6 @@ const SignUpScreen = () => {
     }
   };
 
-
   return (
     <FormContainer>
         <Row className="justify-content-md-center">
@@ -112,11 +111,11 @@ const SignUpScreen = () => {
                                 <Form.Control type="text" placeholder="Last Name" /*value={} onChange={}*/></Form.Control>
                             </Form.Group>
                         </Col>
-                    </Row>
+                    </Row><br/>
                     <FormGroup controlId="email">
                         <Form.Label>Email Address</Form.Label>
                         <Form.Control type="email" placeholder="example@email.com" value={email} onChange={(e) => setEmail(e.target.value)}></Form.Control>
-                    </FormGroup>
+                    </FormGroup><br/>
                     <FormGroup controlId="password">
                         <Form.Label>Password <span id="password_error"></span> </Form.Label>
                         <Form.Control type="password" placeholder="••••••••" value={password} onClick={(e) => onclick_password()} onChange={(e) => setPassword(e.target.value)}></Form.Control>
@@ -124,7 +123,20 @@ const SignUpScreen = () => {
                     <FormGroup controlId="confirm-password">
                         <Form.Label>Confirm Password</Form.Label>
                         <Form.Control type="password" placeholder="••••••••" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)}></Form.Control>
+                    </FormGroup><br/>
+
+                    <FormGroup controlId="account-type">
+                        <Form.Label>Account Type</Form.Label>
+                        <Form.Control as="select" value={slug}>
+                            <option value="">Select Account Type</option>
+                            <option value="user">Buyer</option>
+                            <option value="seller">Seller</option>
+                            {/* <option value="admin">Admin</option> */}
+                            
+                        </Form.Control><br/>
+
                     </FormGroup>
+                    
                     <Button type="submit" variant="secondary">Sign Up</Button>
                 </Form>
             </Col>
