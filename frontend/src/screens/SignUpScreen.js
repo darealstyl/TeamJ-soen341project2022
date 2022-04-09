@@ -15,6 +15,8 @@ const SignUpScreen = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [isSeller, setIsSeller] = useState(false);
+
   //const [image, setImage] = useState("");
   const [message, setMessage] = useState("");
 
@@ -83,7 +85,7 @@ const SignUpScreen = () => {
       // console.log("email:", email);
       // console.log("username:", username);
       // console.log("password:", password);
-      dispatch(register(name, email, password));
+      dispatch(register(name, email, password, isSeller));
     }
   };
 
@@ -125,12 +127,12 @@ const SignUpScreen = () => {
                         <Form.Control type="password" placeholder="••••••••" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)}></Form.Control>
                     </FormGroup><br/>
 
-                    <FormGroup controlId="account-type">
+                    <FormGroup controlId="isSeller">
                         <Form.Label>Account Type</Form.Label>
-                        <Form.Control as="select" value={slug}>
+                        <Form.Control as="select" value={isSeller} onChange={(e) => setIsSeller(e.target.value)}>
                             <option value="">Select Account Type</option>
-                            <option value="user">Buyer</option>
-                            <option value="seller">Seller</option>
+                            <option value="false">Buyer</option>
+                            <option value="true">Seller</option>
                             {/* <option value="admin">Admin</option> */}
                             
                         </Form.Control><br/>

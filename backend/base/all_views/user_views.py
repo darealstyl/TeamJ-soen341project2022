@@ -11,7 +11,7 @@ from rest_framework_simplejwt.views import TokenObtainPairView
 
 from django.contrib.auth.hashers import make_password
 from rest_framework import status
-
+from ..models import Account
 
 class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
     def validate(self, attrs):
@@ -37,6 +37,17 @@ def registerUser(request):
             username=data['email'],
             email=data['email'],
             password=make_password(data['password'])
+            
+            
+        )
+        if 'true' in  data['isSeller'] :
+            isSeller = True
+        else:
+            isSeller = False
+        
+        user.account =  Account.objects.create(
+            user = user,
+            isSeller = isSeller
         )
 
         serializer = UserSerializerWithToken(user, many=False)
@@ -101,6 +112,7 @@ def updateUser(request, pk):
     user.username = data['email']
     user.email = data['email']
     user.is_staff = data['isAdmin']
+    user.is_seller = data['isSeller']
 
     user.save()
 
