@@ -1,5 +1,5 @@
 import React from "react";
-import { NavDropdown, Navbar, Nav, Container, Row } from "react-bootstrap";
+import { NavDropdown, Navbar, Nav, Container, Row, Badge } from "react-bootstrap";
 import axios from "axios";
 import { LinkContainer } from "react-router-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
@@ -13,6 +13,14 @@ function Header() {
 
   const userLogin = useSelector((state) => state.userLogin);
   const { userInfo } = userLogin;
+
+  const cartItems = useSelector((state) => state.cart.cartItems)
+
+  let quantity = 0
+
+  cartItems.forEach(product => {
+    quantity += parseInt(product.qty)
+  });
 
   let navigate = useNavigate();
 
@@ -109,7 +117,13 @@ function Header() {
                   </NavDropdown>
                 ) : ("")}
                   <LinkContainer to="/cart">
-                      <Nav.Link><i className="fas fa-shopping-cart"></i> Cart</Nav.Link>
+                        <Nav.Link>
+                          <i className="fas fa-shopping-cart"></i>
+                          <span> Cart</span>  
+                          <sup>
+                            <Badge style={{marginLeft: 5}} id="cartBadge" pill bg="light" text="dark">  {quantity}</Badge>  
+                          </sup>
+                        </Nav.Link>
                   </LinkContainer>
               </Nav>
           </Navbar.Collapse>
