@@ -87,7 +87,7 @@ const SignUpScreen = () => {
       // console.log("password:", password);
       dispatch(register(name, email, password, isSeller));
     }
-  };
+  }
 
   return (
     <FormContainer>
