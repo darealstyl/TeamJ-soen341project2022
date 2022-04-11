@@ -136,3 +136,25 @@ h2 {
   font-size:12px;
   margin-left:10rem;
 }
+
+label{
+  font-size:larger;
+  color:rgb(5, 159, 255);
+}
+.form-control{
+  border-color: rgb(5, 159, 255);
+}
+
+.card{
+  height: 25rem;
+}
+
+.card:hover{
+  background-color:rgba(5, 159, 255,0.05) ;
+  
+}
+
+.card-img{
+  max-height: 10rem;
+  max-width: 10rem;
+}
