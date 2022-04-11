@@ -2,18 +2,23 @@
 import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import {Row, Col, Button} from 'react-bootstrap'
+import { useLocation } from 'react-router-dom'
 import Product from '../components/Product'
 import Loader from '../components/Loader'
 import Message from '../components/Message'
+import Paginate from '../components/Paginate'
 import {listProducts} from '../actions/productActions'
 
 function BrowsingScreen() {
   const dispatch = useDispatch()
   const productList = useSelector(state => state.productList)
-  const {error,loading,products} = productList
+  const { error, loading, products, page, pages } = productList
+
+  let keyword = useLocation().search
+
   useEffect(() => {
-      dispatch(listProducts())
-  },[dispatch])
+      dispatch(listProducts(keyword))
+  },[dispatch, keyword])
 
   return (
   <div>
@@ -54,11 +59,9 @@ function BrowsingScreen() {
                       </Col>
                   ))}
               </Row>
+        <Paginate page={page} pages={pages} keyword={keyword} />
         </div>
       }
-       
-      
-      
   </div>
     )
 }

@@ -3,6 +3,7 @@ import { NavDropdown, Navbar, Nav, Container, Row, Badge } from "react-bootstrap
 import axios from "axios";
 import { LinkContainer } from "react-router-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
+import SearchBox from './SearchBox'
 import { logout } from "../actions/userActions";
 import { useNavigate } from "react-router-dom"; 
 import { Link } from "react-router-dom";
@@ -84,6 +85,7 @@ function Header() {
                       <Nav.Link>Browse</Nav.Link>
                   </LinkContainer>                  
               </Nav>
+              <SearchBox />
               <Nav className="ms-auto"> {/*aligned to right side of navbar*/}
               {/* {userInfo.isSeller} */}
               {userInfo ? (
