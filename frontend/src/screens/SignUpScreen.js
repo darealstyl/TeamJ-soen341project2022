@@ -15,6 +15,8 @@ const SignUpScreen = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [isSeller, setIsSeller] = useState(false);
+
   //const [image, setImage] = useState("");
   const [message, setMessage] = useState("");
 
@@ -83,10 +85,9 @@ const SignUpScreen = () => {
       // console.log("email:", email);
       // console.log("username:", username);
       // console.log("password:", password);
-      dispatch(register(name, email, password));
+      dispatch(register(name, email, password, isSeller));
     }
   };
-
 
   return (
     <FormContainer>
@@ -112,11 +113,11 @@ const SignUpScreen = () => {
                                 <Form.Control type="text" placeholder="Last Name" /*value={} onChange={}*/></Form.Control>
                             </Form.Group>
                         </Col>
-                    </Row>
+                    </Row><br/>
                     <FormGroup controlId="email">
                         <Form.Label>Email Address</Form.Label>
                         <Form.Control type="email" placeholder="example@email.com" value={email} onChange={(e) => setEmail(e.target.value)}></Form.Control>
-                    </FormGroup>
+                    </FormGroup><br/>
                     <FormGroup controlId="password">
                         <Form.Label>Password <span id="password_error"></span> </Form.Label>
                         <Form.Control type="password" placeholder="••••••••" value={password} onClick={(e) => onclick_password()} onChange={(e) => setPassword(e.target.value)}></Form.Control>
@@ -124,7 +125,20 @@ const SignUpScreen = () => {
                     <FormGroup controlId="confirm-password">
                         <Form.Label>Confirm Password</Form.Label>
                         <Form.Control type="password" placeholder="••••••••" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)}></Form.Control>
+                    </FormGroup><br/>
+
+                    <FormGroup controlId="isSeller">
+                        <Form.Label>Account Type</Form.Label>
+                        <Form.Control as="select" value={isSeller} onChange={(e) => setIsSeller(e.target.value)}>
+                            <option value="">Select Account Type</option>
+                            <option value="false">Buyer</option>
+                            <option value="true">Seller</option>
+                            {/* <option value="admin">Admin</option> */}
+                            
+                        </Form.Control><br/>
+
                     </FormGroup>
+                    
                     <Button type="submit" variant="secondary">Sign Up</Button>
                 </Form>
             </Col>
