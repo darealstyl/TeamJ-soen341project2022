@@ -18,7 +18,7 @@ import { PRODUCT_LIST_REQUEST,
         PRODUCT_UPDATE_REQUEST, 
         PRODUCT_UPDATE_SUCCESS, 
         PRODUCT_UPDATE_FAIL, 
-        PRODUCT_UPDATE_RESET, 
+        PRODUCT_UPDATE_RESET,
     } from '../constants/productConstants'
 
 
@@ -28,7 +28,7 @@ export const productListReducer = (state = { products: [] }, action) => {
             return { loading: true, products: [] }
             
         case PRODUCT_LIST_SUCCESS:
-            return { loading: false, products: action.payload }
+            return { loading: false, products: action.payload.products, page:action.payload.page, pages:action.payload.pages }
 
         case PRODUCT_LIST_FAIL:
             return { loading: false, error: action.payload }
