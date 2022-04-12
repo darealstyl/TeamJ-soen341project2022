@@ -78,19 +78,19 @@ function Header() {
                   <img className="logo" src={logo} alt="Logo" />
               </Navbar.Brand>
           </LinkContainer>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-              <Nav className="me-auto"> {/*aligned to left side of navbar*/}
+          <Nav className="me-auto"> {/*aligned to left side of navbar*/}
                   <LinkContainer to="/browse">
                       <Nav.Link>Browse</Nav.Link>
                   </LinkContainer>                  
-              </Nav>
-              <SearchBox />
+          </Nav>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+              <SearchBox /> 
               <Nav className="ms-auto"> {/*aligned to right side of navbar*/}
               {/* {userInfo.isSeller} */}
               {userInfo ? (
                   <LinkContainer to="/user-profile">
-                    <p className="username_title"> {userInfo.name} </p> 
+                    <p className="username_title">Hello, {userInfo.name}!</p> 
                   </LinkContainer>
                   ) : (
                   <LinkContainer to="/sign-in">
@@ -137,7 +137,9 @@ function Header() {
                           <i className="fas fa-shopping-cart"></i>
                           <span> Cart</span>  
                           <sup>
-                            <Badge style={{marginLeft: 5}} id="cartBadge" pill bg="light" text="dark">  {quantity}</Badge>  
+                            <sup>
+                              <Badge style={{marginLeft: 5, borderRadius: 5 }} id="cartBadge" bg="light" text="dark">  {quantity}</Badge>  
+                            </sup>
                           </sup>
                         </Nav.Link>
                   </LinkContainer>

@@ -126,6 +126,7 @@ h2 {
 
 .username_title{
   margin-left:10rem !important;
+  padding-right:10px;
   font-weight:bold;
   color:white;
   margin: auto;

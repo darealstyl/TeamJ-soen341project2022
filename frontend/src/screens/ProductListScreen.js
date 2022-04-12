@@ -36,7 +36,7 @@ function ProductListScreen({ history, match }) {
         dispatch({ type: PRODUCT_CREATE_RESET })
         
         if (!userInfo.isAdmin) {
-            navigate('/login')
+            navigate(`/sign-in`)
         }
 
         if (successCreate) {
