@@ -36,7 +36,7 @@ function ProductEditScreen({ history }) {
 
         if (successUpdate) {
             dispatch({type: PRODUCT_UPDATE_RESET})
-            navigate(`/seller/product-list/`)
+            navigate(-1)
         } else {
             if (!product.name || product._id !== Number(productId)) {
                 dispatch(listProductDetails(productId))
@@ -97,7 +97,7 @@ function ProductEditScreen({ history }) {
 
   return (
     <div>
-        <Link to='/seller/product-list'>Go Back</Link>
+        <Button onClick={() => {navigate(-1)}}>Go Back</Button>
         <Row>
             <h1>Add/Edit Product</h1>
             {loadingUpdate && <Loader />}
