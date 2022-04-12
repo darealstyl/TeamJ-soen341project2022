@@ -8,6 +8,7 @@ import { register } from "../actions/userActions";
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { getUserDetails, updateUserProfile} from '../actions/userActions'
+import { USER_UPDATE_PROFILE_RESET } from '../constants/userConstants'
 
 function ProfileScreen({ history }) {
   
@@ -42,6 +43,7 @@ function ProfileScreen({ history }) {
     }
     else {
         if(!user || !user.name || success){
+            dispatch({type:USER_UPDATE_PROFILE_RESET})
             dispatch(getUserDetails('profile'))
         }
         else{
@@ -88,7 +90,7 @@ function ProfileScreen({ history }) {
       setMessage("Passwords do not match");
     }
     else {
-        console.log('Updating...')
+        
         dispatch(updateUserProfile({
             'id':user._id,
             'name':name,
