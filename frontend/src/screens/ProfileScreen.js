@@ -97,6 +97,7 @@ function ProfileScreen({ history }) {
             'email':email,
             'password':password
         }))
+        setMessage("");
     }
   }
   

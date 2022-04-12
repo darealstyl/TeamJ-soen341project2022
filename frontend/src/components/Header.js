@@ -102,7 +102,7 @@ function Header() {
                 {userInfo ? (
                   <NavDropdown title="Manage Account" id="basic-nav-dropdown">
                     {userInfo.isSeller ? ("") : (
-                      <LinkContainer to="/user-profile">
+                      <LinkContainer to="/profile">
                           <NavDropdown.Item>My Account</NavDropdown.Item>
                       </LinkContainer>
                       )}

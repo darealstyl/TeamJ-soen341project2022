@@ -26,7 +26,6 @@ function App() {
             <Routes>
                 <Route path='/' element={<BrowsingScreen />} exact />
                 <Route path="/browse" element={<BrowsingScreen />} exact />
-                <Route path='/user-profile' element={<UserProfileScreen />} exact />
                 <Route path='/seller/profile' element={<SellerProfileScreen />} exact />
                 <Route path='/sign-in' element={<SignInScreen />} exact />
                 <Route path='/sign-up' element={<SignUpScreen />} exact />
