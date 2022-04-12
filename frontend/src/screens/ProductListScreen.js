@@ -36,9 +36,14 @@ function ProductListScreen({ history, match }) {
     useEffect(() => {
         dispatch({ type: PRODUCT_CREATE_RESET })
 
-        // if (!userInfo.isAdmin) {
-        //     navigate('/login')
-        // }
+        if (userInfo === null) {
+            navigate(`/sign-in/`)
+            window.location.reload(false);
+        }
+
+        if (!userInfo.isSeller) {
+            navigate(`/sign-in`)
+        }
 
         if (successCreate) {
             navigate(`/seller/product/${createdProduct._id}/edit`)
@@ -57,12 +62,12 @@ function ProductListScreen({ history, match }) {
     const createProductHandler = () => {
         dispatch(createProduct())
     }
-    console.log('user info', userInfo.id)
-    try{
-        console.log('products',products[1].user)
-    }catch(e){
-        console.log('error',e)
-    }
+    // console.log('user info', userInfo.id)
+    // try{
+    //     console.log('products',products[1].user)
+    // }catch(e){
+    //     console.log('error',e)
+    // }
 
 
 // }
