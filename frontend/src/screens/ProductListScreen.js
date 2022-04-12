@@ -36,9 +36,14 @@ function ProductListScreen({ history, match }) {
     useEffect(() => {
         dispatch({ type: PRODUCT_CREATE_RESET })
 
-        // if (!userInfo.isAdmin) {
-        //     navigate('/login')
-        // }
+        if (userInfo === null) {
+            navigate(`/sign-in/`)
+            window.location.reload(false);
+        }
+
+        if (!userInfo.isSeller) {
+            navigate(`/sign-in`)
+        }
 
         if (successCreate) {
             navigate(`/seller/product/${createdProduct._id}/edit`)
@@ -57,12 +62,12 @@ function ProductListScreen({ history, match }) {
     const createProductHandler = () => {
         dispatch(createProduct())
     }
-    console.log('user info', userInfo.id)
-    try{
-        console.log('products',products[1].user)
-    }catch(e){
-        console.log('error',e)
-    }
+    // console.log('user info', userInfo.id)
+    // try{
+    //     console.log('products',products[1].user)
+    // }catch(e){
+    //     console.log('error',e)
+    // }
 
 
 // }
@@ -75,7 +80,7 @@ function ProductListScreen({ history, match }) {
                 <h1>Product List</h1>
             </Col>
             <Col md='1'>{/* Empty column for spacing */}</Col>
-            <Col md='3'>
+            <Col md='3' style={{display:'flex', justifyContent:'right'}}>
                 <Button variant='secondary' onClick={createProductHandler}>
                     <i className='fas fa-plus'></i> Add Product
                 </Button>
@@ -94,16 +99,16 @@ function ProductListScreen({ history, match }) {
             ? (<Loader />)
             : error
                 ? (<Message variant ='danger'>{error}</Message>)
-<<<<<<< HEAD
-                : (
+                : ( <div>
                     <Table striped bordered hover responsive className='table-md'>
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                {/* <th>Name</th>
+                                <th>Name</th>
                                 <th>Price</th>
                                 <th>Category</th>
-                                <th>Brand</th> */}
+                                <th>Brand</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -112,13 +117,12 @@ function ProductListScreen({ history, match }) {
                                 // {product._id == userInfo.id}
                                 <tr key={product._id} className="table_items">
                                 {product.user == userInfo.id &&
-
-                                <div className="table_items_tr">
-                                    <td>{product._id} &emsp; &emsp;&emsp; &emsp; &emsp;</td>
-                                    <td>{product.name} &emsp; &emsp;&emsp; &emsp; &emsp; </td>
-                                    <td>$ {product.price} &emsp; &emsp;&emsp; &emsp; &emsp; </td>
-                                    <td>{product.category} &emsp; &emsp;&emsp; &emsp; &emsp; </td>
-                                    <td>{product.brand} &emsp; &emsp; &emsp; &emsp;  &emsp;&emsp; &emsp; &emsp; &emsp;&emsp; &emsp; &emsp; &emsp; &emsp;&emsp; &emsp; &emsp; &emsp; &emsp;&emsp; &emsp; &emsp; &emsp; &emsp;&emsp; &emsp; &emsp; &emsp; &emsp; &emsp;&emsp; &emsp; &emsp; &emsp; &emsp;&emsp; &emsp; &emsp; &emsp; &emsp; </td>
+                                <>
+                                    <td>{product._id}</td>
+                                    <td>{product.name}</td>
+                                    <td>$ {product.price}</td>
+                                    <td>{product.category}</td>
+                                    <td>{product.brand}</td>
                                     <td className="td_btns">
                                         <LinkContainer to={`/seller/product/${product._id}/edit`}>
                                             <Button variant='light' className='btn-sm'>
@@ -129,43 +133,16 @@ function ProductListScreen({ history, match }) {
                                             <i className='fas fa-trash'></i>
                                         </Button>
                                     </td>
-                                </div>
-                                }
-                                </tr>
-
-
+                                </>
+                                
+                            }
+                            </tr>
                             )
                                 )}
                         </tbody>
-
                     </Table>
-                            </thead>
-                            <tbody>
-                                {products.map(product => (
-                                    <tr key={product._id}>
-                                        <td>{product._id}</td>
-                                        <td>{product.name}</td>
-                                        <td>$ {product.price}</td>
-                                        <td>{product.category}</td>
-                                        <td>{product.brand}</td>
-                                        <td>
-                                            <LinkContainer to={`/seller/product/${product._id}/edit`}>
-                                                <Button variant='light' className='btn-sm'>
-                                                    <i className='fas fa-edit'></i>
-                                                </Button>
-                                            </LinkContainer>
-                                            <Button variant='danger' className='btn-sm' onClick={() => deleteHandler(product._id)}>
-                                                <i className='fas fa-trash'></i>
-                                            </Button>
-                                        </td>
-                                    </tr>
-
-                                )
-                                    )}
-                            </tbody>    
-                        </Table>
-                        <Paginate pages={pages} page={page} isAdmin={true}/>
-                    </div>
+                    <Paginate pages={pages} page={page} isSeller={true} userId={userInfo.id}/>
+                </div>
                 )
 
             }
