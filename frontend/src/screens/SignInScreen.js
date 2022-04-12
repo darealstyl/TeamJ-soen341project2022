@@ -74,7 +74,25 @@ const redirect ="/";
           </Link>
         </Col>
       </Row>
+
+      <Row className='py-3'>
+        <Col>
+          Admin?{' '}
+          {/* <Link to={redirect ? `/sign-up?redirect=${redirect}` : '/sign-up'}>
+            sign-up
+          </Link> */}
+              {/*<Link to={`http://127.0.0.1:8000/admin/login/?next=/admin/`}>
+            Login
+          </Link>*/}
+             
+             <a href="http://127.0.0.1:8000/admin/login/?next=/admin/" > Login </a>
+
+        </Col>
+      </Row>
+
     </FormContainer>
+
+    
   )
 }
 
