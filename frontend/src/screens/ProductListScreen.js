@@ -141,7 +141,7 @@ function ProductListScreen({ history, match }) {
                                 )}
                         </tbody>
                     </Table>
-                    <Paginate pages={pages} page={page} isAdmin={true}/>
+                    <Paginate pages={pages} page={page} isSeller={true}/>
                 </div>
                 )
 
