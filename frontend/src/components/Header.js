@@ -106,18 +106,21 @@ function Header() {
                           <NavDropdown.Item>My Account</NavDropdown.Item>
                       </LinkContainer>
                       )}
+                      {userInfo.isSeller ? ("") : (
                       <LinkContainer to="/orders">
-                        <NavDropdown.Item>My Orders</NavDropdown.Item>
-                      </LinkContainer>
+                      <NavDropdown.Item>My Orders</NavDropdown.Item>
+                    </LinkContainer>
+                      )}
+                      
                       {userInfo.isSeller ? (
-                      <LinkContainer to="/seller/profile">
+                      <LinkContainer to="/seller/profile">  
                           <NavDropdown.Item>Seller Profile</NavDropdown.Item>
                       </LinkContainer>
                                             ) : (""
                       )}
                       {userInfo.isSeller ? (
                       <LinkContainer to="/seller/product-list">
-                          <NavDropdown.Item>Product List</NavDropdown.Item>
+                          <NavDropdown.Item>My Product List</NavDropdown.Item>
                       </LinkContainer>
                       ) : (""
                       )}
@@ -137,9 +140,7 @@ function Header() {
                           <i className="fas fa-shopping-cart"></i>
                           <span> Cart</span>  
                           <sup>
-                            <sup>
-                              <Badge style={{marginLeft: 5, borderRadius: 5 }} id="cartBadge" bg="light" text="dark">  {quantity}</Badge>  
-                            </sup>
+                            <Badge style={{marginLeft: 5}} id="cartBadge" pill bg="light" text="dark">  {quantity}</Badge>  
                           </sup>
                         </Nav.Link>
                   </LinkContainer>
