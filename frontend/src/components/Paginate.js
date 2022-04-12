@@ -9,6 +9,7 @@ function Paginate({pages, page, keyword='', isAdmin=false}) {
     }
 
   return (pages > 1 && (
+    <div style={{display: "flex", justifyContent: "center"}}>
       <Pagination>
           {[...Array(pages).keys()].map((x) => (
               <LinkContainer 
@@ -20,6 +21,7 @@ function Paginate({pages, page, keyword='', isAdmin=false}) {
               </LinkContainer>
           ))}
       </Pagination>
+    </div>
     )       
   )
 }
