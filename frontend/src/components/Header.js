@@ -89,7 +89,7 @@ function Header() {
               <Nav className="ms-auto"> {/*aligned to right side of navbar*/}
               {/* {userInfo.isSeller} */}
               {userInfo ? (
-                  <LinkContainer to="/user-profile">
+                  <LinkContainer to="/profile">
                     <p className="username_title"> {userInfo.name} </p> 
                   </LinkContainer>
                   ) : (
@@ -110,8 +110,8 @@ function Header() {
                         <NavDropdown.Item>My Orders</NavDropdown.Item>
                       </LinkContainer>
                       {userInfo.isSeller ? (
-                      <LinkContainer to="/seller/profile">
-                          <NavDropdown.Item>Seller Profile</NavDropdown.Item>
+                      <LinkContainer to="/profile">
+                          <NavDropdown.Item>My Account</NavDropdown.Item>
                       </LinkContainer>
                                             ) : (""
                       )}
