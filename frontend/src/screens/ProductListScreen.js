@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { Row, Col, Button, Table } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import { LinkContainer } from 'react-router-bootstrap'
+import Container from 'react-bootstrap/Container'
 import Loader from '../components/Loader'
 import Message from '../components/Message'
 import { listProducts, deleteProduct, createProduct } from '../actions/productActions'
@@ -20,6 +21,8 @@ function ProductListScreen({ history, match }) {
     const productList = useSelector(state => state.productList)
     const { loading, error, products } = productList
 
+    console.log(products)
+
     const productDelete = useSelector(state => state.productDelete)
     const { loading: loadingDelete, error: errorDelete, success: successDelete } = productDelete
     
@@ -32,9 +35,9 @@ function ProductListScreen({ history, match }) {
     useEffect(() => {
         dispatch({ type: PRODUCT_CREATE_RESET })
         
-        if (!userInfo.isAdmin) {
-            navigate('/login')
-        }
+        // if (!userInfo.isAdmin) {
+        //     navigate('/login')
+        // }
 
         if (successCreate) {
             navigate(`/seller/product/${createdProduct._id}/edit`)
@@ -53,7 +56,17 @@ function ProductListScreen({ history, match }) {
     const createProductHandler = () => {
         dispatch(createProduct())
     }
+    console.log('user info', userInfo.id)
+    try{
+        console.log('products',products[1].user)
+    }catch(e){
+        console.log('error',e)
+    }
+    
 
+// }
+    // console.log('products',products[1]._id)
+    // console.log('user info', userInfo.id)
   return (
     <div>
         <Row className='align-items-center'>
@@ -81,35 +94,43 @@ function ProductListScreen({ history, match }) {
             : error
                 ? (<Message variant ='danger'>{error}</Message>)
                 : (
-                    <Table striped bordered hover responsive className='table-sm'>
+                    <Table striped bordered hover responsive className='table-md'>
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Name</th>
+                                {/* <th>Name</th>
                                 <th>Price</th>
                                 <th>Category</th>
-                                <th>Brand</th>
+                                <th>Brand</th> */}
                             </tr>
                         </thead>
                         <tbody>
                             {products.map(product => (
-                                <tr key={product._id}>
-                                    <td>{product._id}</td>
-                                    <td>{product.name}</td>
-                                    <td>$ {product.price}</td>
-                                    <td>{product.category}</td>
-                                    <td>{product.brand}</td>
-                                    <td>
+              
+                                // {product._id == userInfo.id} 
+                                <tr key={product._id} className="table_items">
+                                {product.user == userInfo.id && 
+                                                    
+                                <div className="table_items_tr">
+                                    <td>{product._id} &emsp; &emsp;&emsp; &emsp; &emsp;</td>  
+                                    <td>{product.name} &emsp; &emsp;&emsp; &emsp; &emsp; </td>
+                                    <td>$ {product.price} &emsp; &emsp;&emsp; &emsp; &emsp; </td>
+                                    <td>{product.category} &emsp; &emsp;&emsp; &emsp; &emsp; </td>
+                                    <td>{product.brand} &emsp; &emsp; &emsp; &emsp;  &emsp;&emsp; &emsp; &emsp; &emsp;&emsp; &emsp; &emsp; &emsp; &emsp;&emsp; &emsp; &emsp; &emsp; &emsp;&emsp; &emsp; &emsp; &emsp; &emsp;&emsp; &emsp; &emsp; &emsp; &emsp; &emsp;&emsp; &emsp; &emsp; &emsp; &emsp;&emsp; &emsp; &emsp; &emsp; &emsp; </td>
+                                    <td className="td_btns">
                                         <LinkContainer to={`/seller/product/${product._id}/edit`}>
                                             <Button variant='light' className='btn-sm'>
                                                 <i className='fas fa-edit'></i>
                                             </Button>
                                         </LinkContainer>
-                                        <Button variant='danger' className='btn-sm' onClick={() => deleteHandler(product._id)}>
+                                        <Button variant='danger' className='btn-sm trash_item' onClick={() => deleteHandler(product._id)}>
                                             <i className='fas fa-trash'></i>
                                         </Button>
                                     </td>
+                                </div>
+                                }
                                 </tr>
+                                
                                 
                             )
                                 )}
