@@ -22,11 +22,9 @@ function ProductListScreen({ history, match }) {
     const productList = useSelector(state => state.productList)
     const { loading, error, products, pages, page } = productList
 
-    console.log(products)
-
     const productDelete = useSelector(state => state.productDelete)
     const { loading: loadingDelete, error: errorDelete, success: successDelete } = productDelete
-    
+
     const productCreate = useSelector(state => state.productCreate)
     const { loading: loadingCreate, error: errorCreate, success: successCreate, product:createdProduct } = productCreate
 
@@ -37,23 +35,17 @@ function ProductListScreen({ history, match }) {
 
     useEffect(() => {
         dispatch({ type: PRODUCT_CREATE_RESET })
-        
-<<<<<<< HEAD
+
         // if (!userInfo.isAdmin) {
         //     navigate('/login')
         // }
-=======
-        if (!userInfo.isAdmin) {
-            navigate(`/sign-in`)
-        }
->>>>>>> main
 
         if (successCreate) {
             navigate(`/seller/product/${createdProduct._id}/edit`)
         } else {
             dispatch(listProducts(keyword))
         }
-            
+
     }, [ dispatch, history, userInfo, successDelete, successCreate, createdProduct, keyword ])
 
     const deleteHandler = (id) => {
@@ -71,7 +63,7 @@ function ProductListScreen({ history, match }) {
     }catch(e){
         console.log('error',e)
     }
-    
+
 
 // }
     // console.log('products',products[1]._id)
@@ -97,8 +89,8 @@ function ProductListScreen({ history, match }) {
         {errorCreate && <Message variant='danger'>{errorCreate}</Message>}
 
         {/* <Row> */}
-        
-            {loading 
+
+            {loading
             ? (<Loader />)
             : error
                 ? (<Message variant ='danger'>{error}</Message>)
@@ -116,13 +108,13 @@ function ProductListScreen({ history, match }) {
                         </thead>
                         <tbody>
                             {products.map(product => (
-              
-                                // {product._id == userInfo.id} 
+
+                                // {product._id == userInfo.id}
                                 <tr key={product._id} className="table_items">
-                                {product.user == userInfo.id && 
-                                                    
+                                {product.user == userInfo.id &&
+
                                 <div className="table_items_tr">
-                                    <td>{product._id} &emsp; &emsp;&emsp; &emsp; &emsp;</td>  
+                                    <td>{product._id} &emsp; &emsp;&emsp; &emsp; &emsp;</td>
                                     <td>{product.name} &emsp; &emsp;&emsp; &emsp; &emsp; </td>
                                     <td>$ {product.price} &emsp; &emsp;&emsp; &emsp; &emsp; </td>
                                     <td>{product.category} &emsp; &emsp;&emsp; &emsp; &emsp; </td>
@@ -140,24 +132,13 @@ function ProductListScreen({ history, match }) {
                                 </div>
                                 }
                                 </tr>
-                                
-                                
+
+
                             )
                                 )}
                         </tbody>
-                        
-                    </Table>      
-=======
-                : ( <div>
-                        <Table striped bordered hover responsive className='table-sm'>
-                            <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Name</th>
-                                    <th>Price</th>
-                                    <th>Category</th>
-                                    <th>Brand</th>
-                                </tr>
+
+                    </Table>
                             </thead>
                             <tbody>
                                 {products.map(product => (
@@ -178,19 +159,18 @@ function ProductListScreen({ history, match }) {
                                             </Button>
                                         </td>
                                     </tr>
-                                    
+
                                 )
                                     )}
                             </tbody>    
                         </Table>
                         <Paginate pages={pages} page={page} isAdmin={true}/>
-                    </div>      
->>>>>>> main
+                    </div>
                 )
-        
-            }       
+
+            }
         {/* </Row> */}
-        
+
     </div>
   )
 }
