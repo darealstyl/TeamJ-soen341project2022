@@ -1,37 +1,81 @@
-import React from "react";
-import { Row, Col, Form, FormGroup, Button } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
+import { Form, Button, Row, Col } from 'react-bootstrap'
+import { useDispatch, useSelector } from 'react-redux'
+import Message from '../components/Message'
+import Loader from '../components/Loader'
+import FormContainer from '../components/FormContainer'
+import { login } from '../actions/userActions'
+import { useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-function SignIn() {
+const SignIn = () => {
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+
+  const dispatch = useDispatch()
+  let navigate = useNavigate();
+
+  const userLogin = useSelector((state) => state.userLogin)
+  const { loading, error, userInfo } = userLogin
+let { slug } = useParams();
+  //const redirect = location.search ? location.search.split('=')[1] : '/'
+const redirect ="/";
+  useEffect(() => {
+    if (userInfo) {
+      navigate('/')
+    }
+  }, [navigate, userInfo]);
+
+  const submitHandler = (e) => {
+    e.preventDefault()
+    dispatch(login(email, password))
+  }
+
   return (
-    <div>
-        <Row className="justify-content-md-center">
-            <Col md="auto">
-                <h1>Sign In</h1>
-            </Col>
-        </Row>
-        <Row>
-            <Col md={3}>{/* empty column for spacing */}</Col>
-            <Col md={6}>
-                <Form /*onSubmit={}*/>
-                    <FormGroup controlId="email">
-                        <Form.Label>Email Address</Form.Label>
-                        <Form.Control type="email" placeholder="example@email.com" /*value={} onChange={}*/></Form.Control>
-                    </FormGroup>
-                    <FormGroup controlId="password">
-                        <Form.Label>Password</Form.Label>
-                        <Form.Control type="password" placeholder="••••••••" /*value={} onChange={}*/></Form.Control>
-                    </FormGroup>
-                    <Button type="submit" variant="secondary">Sign In</Button>
-                </Form>
-                <div>
-                    Don't have an account yet? <Link to="/sign-up">Sign up here.</Link>     
-                </div>
-            </Col>
-            <Col md={3}>{/* empty column for spacing */}</Col>
-        </Row>
-    </div>
-  );
+    <FormContainer>
+      <h1>Sign In</h1>
+      {error && <Message variant='danger'>{error}</Message>}
+      {loading && <Loader />}
+      <Form onSubmit={submitHandler}>
+        <Form.Group controlId='email'>
+          <Form.Label>Email Address</Form.Label>
+          <Form.Control
+            type='email'
+            placeholder='Enter email'
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          ></Form.Control>
+        </Form.Group>
+
+        <Form.Group controlId='password'>
+          <Form.Label>Password</Form.Label>
+          <Form.Control
+            type='password'
+            placeholder='Enter password'
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          ></Form.Control>
+        </Form.Group>
+
+        <Button type='submit' variant='primary'>
+          Sign In
+        </Button>
+      </Form>
+
+      <Row className='py-3'>
+        <Col>
+          New Customer?{' '}
+          {/* <Link to={redirect ? `/sign-up?redirect=${redirect}` : '/sign-up'}>
+            sign-up
+          </Link> */}
+             <Link to={`/sign-up`}>
+            Sign-up
+          </Link>
+        </Col>
+      </Row>
+    </FormContainer>
+  )
 }
 
 export default SignIn;

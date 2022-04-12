@@ -114,4 +114,48 @@ main{
   color: rgba(183, 184, 185,1) !important;
 }
 
+h1 {
+  font-size: 1.8rem;
+  padding: 1rem 0;
+}
 
+h2 {
+  font-size: 1.4rem;
+  padding: 0.5rem 0;
+}
+
+.username_title{
+  margin-left:10rem !important;
+  padding-right:10px;
+  font-weight:bold;
+  color:white;
+  margin: auto;
+}
+
+#password_error{
+  color:red;
+  font-size:12px;
+  margin-left:10rem;
+}
+
+label{
+  font-size:larger;
+  color:rgb(5, 159, 255);
+}
+.form-control{
+  border-color: rgb(5, 159, 255);
+}
+
+.card{
+  height: 25rem;
+}
+
+.card:hover{
+  background-color:rgba(5, 159, 255,0.05) ;
+  
+}
+
+.card-img{
+  max-height: 10rem;
+  max-width: 10rem;
+}

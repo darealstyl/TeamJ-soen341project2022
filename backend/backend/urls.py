@@ -1,6 +1,7 @@
 """backend URL Configuration
+
 The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/3.1/topics/http/urls/
+    https://docs.djangoproject.com/en/4.0/topics/http/urls/
 Examples:
 Function views
     1. Add an import:  from my_app import views
@@ -21,10 +22,9 @@ from django.views.generic import TemplateView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include('base.urls')),
-    # path('api/products/', include('base.urls.product_urls')),
-    # path('api/users/', include('base.urls.user_urls')), 
-    # path('api/orders/', include('base.urls.order_urls')),
+    path('api/products/', include('base.urls.product_urls')),
+    path('api/users/', include('base.urls.user_urls')), 
+    path('api/orders/', include('base.urls.order_urls')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
