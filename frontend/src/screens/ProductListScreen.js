@@ -80,7 +80,7 @@ function ProductListScreen({ history, match }) {
                 <h1>Product List</h1>
             </Col>
             <Col md='1'>{/* Empty column for spacing */}</Col>
-            <Col md='3'>
+            <Col md='3' style={{display:'flex', justifyContent:'right'}}>
                 <Button variant='secondary' onClick={createProductHandler}>
                     <i className='fas fa-plus'></i> Add Product
                 </Button>
@@ -141,7 +141,7 @@ function ProductListScreen({ history, match }) {
                                 )}
                         </tbody>
                     </Table>
-                    <Paginate pages={pages} page={page} isSeller={true}/>
+                    <Paginate pages={pages} page={page} isSeller={true} userId={userInfo.id}/>
                 </div>
                 )
 
