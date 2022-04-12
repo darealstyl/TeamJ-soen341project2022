@@ -108,8 +108,8 @@ function Header() {
                       )}
                       {userInfo.isSeller ? ("") : (
                       <LinkContainer to="/orders">
-                      <NavDropdown.Item>My Orders</NavDropdown.Item>
-                    </LinkContainer>
+                        <NavDropdown.Item>My Orders</NavDropdown.Item>
+                      </LinkContainer>
                       )}
                       
                       {userInfo.isSeller ? (
@@ -119,16 +119,23 @@ function Header() {
                                             ) : (""
                       )}
                       {userInfo.isSeller ? (
-                      <LinkContainer to="/seller/product-list">
+                      <LinkContainer to={`/seller/product-list?id=${userInfo.id}&?keyword=&page=1`}>
                           <NavDropdown.Item>My Product List</NavDropdown.Item>
                       </LinkContainer>
                       ) : (""
                       )}
                       <NavDropdown.Divider />
-                      <LinkContainer to="/admin">
-                          <NavDropdown.Item>Settings</NavDropdown.Item>
-                      </LinkContainer>
-                      
+                      {userInfo.isAdmin ? (
+                      <>
+                        <LinkContainer to={"/admin/product-list?keyword=&page=1"}>
+                          <NavDropdown.Item>Product List</NavDropdown.Item>
+                        </LinkContainer>
+                        <LinkContainer to={"/admin/user-list"}>
+                          <NavDropdown.Item>User List</NavDropdown.Item>
+                        </LinkContainer>
+                      </>
+                      ) : ("")
+                      }
                       <NavDropdown.Item onClick={logoutHandler}>
                           <span>Logout</span>
                       </NavDropdown.Item> 

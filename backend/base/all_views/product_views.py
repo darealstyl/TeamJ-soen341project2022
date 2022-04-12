@@ -4,6 +4,7 @@ from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import IsAuthenticated, IsAdminUser
 from rest_framework.response import Response
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.db.models import Q
 
 from base.models import Product, Review
 from base.serializers import ProductSerializer
@@ -14,10 +15,17 @@ from rest_framework import status
 @api_view(['GET'])
 def getProducts(request):
     query = request.query_params.get('keyword')
+    SELLERID = request.query_params.get('id')
+
     if query == None:
         query = ''
 
-    products = Product.objects.filter(name__icontains=query)
+    if SELLERID == None:
+        products = Product.objects.filter(Q(name__icontains=query) | Q(category__icontains=query) | Q(category__icontains=query))
+    else:
+        products = Product.objects.filter(Q(user=SELLERID), Q(name__icontains=query))
+
+
     # products = Product.objects.filter(name__icontains=query).order_by('-createdAt')
 
     page = request.query_params.get('page')

@@ -69,8 +69,8 @@ function AdminProductListScreen({ history, match }) {
                 <h1>Product List</h1>
             </Col>
             <Col md='1'>{/* Empty column for spacing */}</Col>
-            <Col md='3'>
-                <Button variant='secondary' onClick={createProductHandler}>
+            <Col md='3' style={{display:'flex', justifyContent:'right'}}>
+                <Button variant='secondary' onClick={createProductHandler} disabled>
                     <i className='fas fa-plus'></i> Add Product
                 </Button>
             </Col>
