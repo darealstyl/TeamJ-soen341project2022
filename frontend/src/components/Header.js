@@ -78,14 +78,14 @@ function Header() {
                   <img className="logo" src={logo} alt="Logo" />
               </Navbar.Brand>
           </LinkContainer>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-              <Nav className="me-auto"> {/*aligned to left side of navbar*/}
+          <Nav className="me-auto"> {/*aligned to left side of navbar*/}
                   <LinkContainer to="/browse">
                       <Nav.Link>Browse</Nav.Link>
                   </LinkContainer>                  
-              </Nav>
-              <SearchBox />
+          </Nav>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+              <SearchBox /> 
               <Nav className="ms-auto"> {/*aligned to right side of navbar*/}
               {/* {userInfo.isSeller} */}
               {userInfo ? (
@@ -106,9 +106,12 @@ function Header() {
                           <NavDropdown.Item>My Account</NavDropdown.Item>
                       </LinkContainer>
                       )}
+                      {userInfo.isSeller ? ("") : (
                       <LinkContainer to="/orders">
                         <NavDropdown.Item>My Orders</NavDropdown.Item>
                       </LinkContainer>
+                      )}
+                      
                       {userInfo.isSeller ? (
                       <LinkContainer to="/profile">
                           <NavDropdown.Item>My Account</NavDropdown.Item>
@@ -116,16 +119,23 @@ function Header() {
                                             ) : (""
                       )}
                       {userInfo.isSeller ? (
-                      <LinkContainer to="/seller/product-list">
-                          <NavDropdown.Item>Product List</NavDropdown.Item>
+                      <LinkContainer to={`/seller/product-list?id=${userInfo.id}&?keyword=&page=1`}>
+                          <NavDropdown.Item>My Product List</NavDropdown.Item>
                       </LinkContainer>
                       ) : (""
                       )}
                       <NavDropdown.Divider />
-                      <LinkContainer to="/admin">
-                          <NavDropdown.Item>Settings</NavDropdown.Item>
-                      </LinkContainer>
-                      
+                      {userInfo.isAdmin ? (
+                      <>
+                        <LinkContainer to={"/admin/product-list?keyword=&page=1"}>
+                          <NavDropdown.Item>Product List</NavDropdown.Item>
+                        </LinkContainer>
+                        <LinkContainer to={"/admin/user-list"}>
+                          <NavDropdown.Item>User List</NavDropdown.Item>
+                        </LinkContainer>
+                      </>
+                      ) : ("")
+                      }
                       <NavDropdown.Item onClick={logoutHandler}>
                           <span>Logout</span>
                       </NavDropdown.Item> 

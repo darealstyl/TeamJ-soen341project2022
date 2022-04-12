@@ -147,7 +147,7 @@ const SignUpScreen = () => {
               <Row className="py-3">
         <Col>
           Have an Account?{" "}
-          <Link to={redirect ? `/login?redirect=${redirect}` : "/login"}>
+          <Link to={redirect ? `/sign-in?redirect=${redirect}` : "/sign-in"}>
             Sign In
           </Link>
         </Col>
