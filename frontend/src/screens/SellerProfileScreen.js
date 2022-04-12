@@ -52,7 +52,7 @@ function SellerProfileScreen() {
                         <Form.Label>Confirm Password</Form.Label>
                         <Form.Control type='password' name='confirm-password' placeholder='••••••••' defaultValue={""} onChange={handleChange}></Form.Control>
                     </FormGroup>
-                    <h4>Shipping Address</h4>
+                    {/* <h4>Shipping Address</h4>
                     <FormGroup controlId='address'>
                         <Form.Label>Street Address</Form.Label>
                         <Form.Control type='text' name='address' placeholder='' defaultValue={""} onChange={handleChange}></Form.Control>
@@ -72,8 +72,8 @@ function SellerProfileScreen() {
                     <FormGroup controlId='country'>
                         <Form.Label>Country</Form.Label>
                         <Form.Control type='text' name='country' placeholder='' defaultValue={""} onChange={handleChange}></Form.Control>
-                    </FormGroup>
-                    <h4>Payment Information</h4>
+                    </FormGroup> */}
+                    {/* <h4>Payment Information</h4>
                     <FormGroup controlId='card-number'>
                         <Form.Label>Card Number</Form.Label>
                         <Form.Control type='text' name='card_number' placeholder='1234567890123456' defaultValue={""} onChange={handleChange}></Form.Control>
@@ -91,16 +91,16 @@ function SellerProfileScreen() {
                                 <Form.Control type='password' name='ccv' placeholder='•••' defaultValue={""} onChange={handleChange}></Form.Control>
                             </FormGroup>
                         </Col>
-                    </Row>
-                    <FormGroup controlId='check'>
+                    </Row> */}
+                    {/* <FormGroup controlId='check'>
                         <Form.Check label="Billing address is the same as shipping address"/>
-                    </FormGroup>
+                    </FormGroup> */}
                     <Button type='submit' variant='secondary'>Update</Button>
                 </Form>
             </Col>
             <Col md={1}></Col>
             <Col md={3}>
-                <h1>Orders</h1>
+                <h1>List of Products</h1>
                 {/* List of customer's previous orders will go here*/}    
             </Col>
         </Row>
