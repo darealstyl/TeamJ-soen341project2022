@@ -59,9 +59,8 @@ def getProduct(request, pk):
     serializer = ProductSerializer(product, many=False)
     return Response(serializer.data)
 
-
+# @permission_classes([IsAdminUser])
 @api_view(['POST'])
-@permission_classes([IsAdminUser])
 def createProduct(request):
     user = request.user
 
@@ -78,9 +77,8 @@ def createProduct(request):
     serializer = ProductSerializer(product, many=False)
     return Response(serializer.data)
 
-
+# @permission_classes([IsAdminUser])
 @api_view(['PUT'])
-@permission_classes([IsAdminUser])
 def updateProduct(request, pk):
     data = request.data
     product = Product.objects.get(_id=pk)
@@ -97,9 +95,8 @@ def updateProduct(request, pk):
     serializer = ProductSerializer(product, many=False)
     return Response(serializer.data)
 
-
+# @permission_classes([IsAdminUser])
 @api_view(['DELETE'])
-@permission_classes([IsAdminUser])
 def deleteProduct(request, pk):
     product = Product.objects.get(_id=pk)
     product.delete()

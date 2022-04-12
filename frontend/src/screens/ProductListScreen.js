@@ -3,6 +3,7 @@ import { useNavigate, useLocation } from 'react-router-dom'
 import { Row, Col, Button, Table } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import { LinkContainer } from 'react-router-bootstrap'
+import Container from 'react-bootstrap/Container'
 import Loader from '../components/Loader'
 import Message from '../components/Message'
 import Paginate from '../components/Paginate'
@@ -23,7 +24,7 @@ function ProductListScreen({ history, match }) {
 
     const productDelete = useSelector(state => state.productDelete)
     const { loading: loadingDelete, error: errorDelete, success: successDelete } = productDelete
-    
+
     const productCreate = useSelector(state => state.productCreate)
     const { loading: loadingCreate, error: errorCreate, success: successCreate, product:createdProduct } = productCreate
 
@@ -34,17 +35,17 @@ function ProductListScreen({ history, match }) {
 
     useEffect(() => {
         dispatch({ type: PRODUCT_CREATE_RESET })
-        
-        if (!userInfo.isAdmin) {
-            navigate(`/sign-in`)
-        }
+
+        // if (!userInfo.isAdmin) {
+        //     navigate('/login')
+        // }
 
         if (successCreate) {
             navigate(`/seller/product/${createdProduct._id}/edit`)
         } else {
             dispatch(listProducts(keyword))
         }
-            
+
     }, [ dispatch, history, userInfo, successDelete, successCreate, createdProduct, keyword ])
 
     const deleteHandler = (id) => {
@@ -56,7 +57,17 @@ function ProductListScreen({ history, match }) {
     const createProductHandler = () => {
         dispatch(createProduct())
     }
+    console.log('user info', userInfo.id)
+    try{
+        console.log('products',products[1].user)
+    }catch(e){
+        console.log('error',e)
+    }
 
+
+// }
+    // console.log('products',products[1]._id)
+    // console.log('user info', userInfo.id)
   return (
     <div>
         <Row className='align-items-center'>
@@ -78,21 +89,56 @@ function ProductListScreen({ history, match }) {
         {errorCreate && <Message variant='danger'>{errorCreate}</Message>}
 
         {/* <Row> */}
-        
-            {loading 
+
+            {loading
             ? (<Loader />)
             : error
                 ? (<Message variant ='danger'>{error}</Message>)
-                : ( <div>
-                        <Table striped bordered hover responsive className='table-sm'>
-                            <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Name</th>
-                                    <th>Price</th>
-                                    <th>Category</th>
-                                    <th>Brand</th>
+<<<<<<< HEAD
+                : (
+                    <Table striped bordered hover responsive className='table-md'>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                {/* <th>Name</th>
+                                <th>Price</th>
+                                <th>Category</th>
+                                <th>Brand</th> */}
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {products.map(product => (
+
+                                // {product._id == userInfo.id}
+                                <tr key={product._id} className="table_items">
+                                {product.user == userInfo.id &&
+
+                                <div className="table_items_tr">
+                                    <td>{product._id} &emsp; &emsp;&emsp; &emsp; &emsp;</td>
+                                    <td>{product.name} &emsp; &emsp;&emsp; &emsp; &emsp; </td>
+                                    <td>$ {product.price} &emsp; &emsp;&emsp; &emsp; &emsp; </td>
+                                    <td>{product.category} &emsp; &emsp;&emsp; &emsp; &emsp; </td>
+                                    <td>{product.brand} &emsp; &emsp; &emsp; &emsp;  &emsp;&emsp; &emsp; &emsp; &emsp;&emsp; &emsp; &emsp; &emsp; &emsp;&emsp; &emsp; &emsp; &emsp; &emsp;&emsp; &emsp; &emsp; &emsp; &emsp;&emsp; &emsp; &emsp; &emsp; &emsp; &emsp;&emsp; &emsp; &emsp; &emsp; &emsp;&emsp; &emsp; &emsp; &emsp; &emsp; </td>
+                                    <td className="td_btns">
+                                        <LinkContainer to={`/seller/product/${product._id}/edit`}>
+                                            <Button variant='light' className='btn-sm'>
+                                                <i className='fas fa-edit'></i>
+                                            </Button>
+                                        </LinkContainer>
+                                        <Button variant='danger' className='btn-sm trash_item' onClick={() => deleteHandler(product._id)}>
+                                            <i className='fas fa-trash'></i>
+                                        </Button>
+                                    </td>
+                                </div>
+                                }
                                 </tr>
+
+
+                            )
+                                )}
+                        </tbody>
+
+                    </Table>
                             </thead>
                             <tbody>
                                 {products.map(product => (
@@ -113,18 +159,18 @@ function ProductListScreen({ history, match }) {
                                             </Button>
                                         </td>
                                     </tr>
-                                    
+
                                 )
                                     )}
                             </tbody>    
                         </Table>
                         <Paginate pages={pages} page={page} isAdmin={true}/>
-                    </div>      
+                    </div>
                 )
-        
-            }       
+
+            }
         {/* </Row> */}
-        
+
     </div>
   )
 }
