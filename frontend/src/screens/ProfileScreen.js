@@ -39,7 +39,7 @@ function ProfileScreen({ history }) {
   
   useEffect(() => {
     if (!userInfo) {
-      history.push('/login')
+      navigate('/login')
     }
     else {
         if(!user || !user.name || success){

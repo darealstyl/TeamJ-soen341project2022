@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
+import { useNavigate, useLocation } from 'react-router-dom'
 import { LinkContainer } from 'react-router-bootstrap'
-import { Table, Button } from 'react-bootstrap'
+import { Row, Col, Table, Button } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import Message from '../components/Message'
 import Loader from '../components/Loader'
@@ -8,6 +9,8 @@ import { listUsers, deleteUser } from '../actions/userActions'
 
 const UserListScreen = ({ history }) => {
   const dispatch = useDispatch()
+
+  let navigate = useNavigate();
 
   const userList = useSelector((state) => state.userList)
   const { loading, error, users } = userList
@@ -22,19 +25,31 @@ const UserListScreen = ({ history }) => {
     if (userInfo && userInfo.isAdmin) {
       dispatch(listUsers())
     } else {
-      history.push('/login')
+      navigate('/sign-in')
     }
   }, [dispatch, history, successDelete, userInfo])
 
   const deleteHandler = (id) => {
-    if (window.confirm('Are you sure')) {
+    if (window.confirm('Are you sure you want to delete this user?')) {
       dispatch(deleteUser(id))
     }
   }
 
   return (
     <>
-      <h1>Users</h1>
+      
+      <Row className='align-items-center'>
+            <Col md='8'>
+                <h1>User List</h1>
+            </Col>
+            <Col md='1'>{/* Empty column for spacing */}</Col>
+            <Col md='3' style={{display:'flex', justifyContent:'right'}}>
+                <Button variant='secondary' /* onClick={}*/>
+                    <i className='fas fa-plus'></i> Add User
+                </Button>
+            </Col>
+
+      </Row>
       {loading ? (
         <Loader />
       ) : error ? (
@@ -44,10 +59,11 @@ const UserListScreen = ({ history }) => {
           <thead>
             <tr>
               <th>ID</th>
-              <th>NAME</th>
-              <th>EMAIL</th>
-              <th>ADMIN</th>
-              <th></th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Admin</th>
+              <th>Seller</th>
+              <th>Action</th>
             </tr>
           </thead>
           <tbody>
@@ -66,8 +82,15 @@ const UserListScreen = ({ history }) => {
                   )}
                 </td>
                 <td>
+                {user.isSeller ? (
+                    <i className='fas fa-check' style={{ color: 'green' }}></i>
+                  ) : (
+                    <i className='fas fa-times' style={{ color: 'red' }}></i>
+                  )}
+                </td>
+                <td>
                   <LinkContainer to={`/admin/user/${user._id}/edit`}>
-                    <Button variant='light' className='btn-sm'>
+                    <Button disabled variant='light' className='btn-sm'>
                       <i className='fas fa-edit'></i>
                     </Button>
                   </LinkContainer>
