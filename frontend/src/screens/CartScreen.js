@@ -15,6 +15,9 @@ function CartScreen() {
   const cart = useSelector(state => state.cart)
   const { cartItems } = cart
 
+  const userLogin = useSelector((state) => state.userLogin);
+  const { userInfo } = userLogin;
+
   useEffect(() =>{
     if(productId.id)
     {
@@ -33,7 +36,12 @@ function CartScreen() {
   };
 
   const checkoutHandler = () => {
-   navigate('/shipping')
+    if (!userInfo) {
+      window.confirm("Please sign in before placing an order.")
+      navigate('/sign-in')
+    } else {
+      navigate('/shipping')
+    }
   }
 
   return (
