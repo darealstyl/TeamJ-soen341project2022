@@ -1,6 +1,7 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import { composeWithDevTools }  from 'redux-devtools-extension';
+
 import { userLoginReducer, 
         userRegisterReducer, 
         userDetailsReducer, 
@@ -15,9 +16,6 @@ import { productListReducer,
         productCreateReducer, 
         productUpdateReducer, 
         productReviewCreateReducer } from './reducers/productReducers'
-
-
-import { userLoginReducer, userRegisterReducer, userDetailsReducer, userUpdateProfileReducer } from './reducers/userReducers';
 
 import {
     orderCreateReducer,
