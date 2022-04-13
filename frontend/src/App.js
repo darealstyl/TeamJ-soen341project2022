@@ -5,7 +5,7 @@ import Footer from './components/Footer'
 import BrowsingScreen from './screens/BrowsingScreen';
 import ProductScreen from './screens/ProductScreen';
 import CartScreen from './screens/CartScreen';
-import UserProfileScreen from './screens/UserProfileScreen'
+import UserEditScreen from './screens/UserEditScreen'
 import SellerProfileScreen from './screens/SellerProfileScreen'
 import SignInScreen from './screens/SignInScreen'
 import SignUpScreen from './screens/SignUpScreen'
@@ -17,6 +17,7 @@ import PlaceOrderScreen from './screens/PlaceOrderScreen'
 import OrderScreen from './screens/OrderScreen'
 import ProfileScreen from './screens/ProfileScreen';
 import AdminProductListScreen from './screens/AdminProductListScreen'
+import UserListScreen from './screens/UserListScreen'
 
 function App() {
   return (
@@ -42,7 +43,9 @@ function App() {
                 <Route path='/payment' element={<PaymentScreen/>} /> 
                 <Route path='/placeorder' element={<PlaceOrderScreen/>} /> 
                 <Route path='/order/:id' element={<OrderScreen/>} /> 
-                <Route path='/admin/product-list' element={<AdminProductListScreen/>} /> 
+                <Route path='/admin/product-list' element={<AdminProductListScreen/>} />
+                <Route path='/admin/user-list' element={<UserListScreen/>} /> 
+                <Route path='/admin/user/:id/edit' element={<UserEditScreen/>} /> 
             </Routes>
           </Container>
       </main>
