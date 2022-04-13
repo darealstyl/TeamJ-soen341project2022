@@ -30,7 +30,7 @@ const SignUpScreen = () => {
   //const redirect = location.search ? location.search.split("=")[1] : "/";
   useEffect(() => {
     if (userInfo) {
-      navigate('/user-profile')
+      navigate('/profile')
     }
   }, [navigate, userInfo]);
 
@@ -96,6 +96,9 @@ const SignUpScreen = () => {
                 <h1>Sign Up</h1>
             </Col>
         </Row>
+        {message && <Message variant='danger'>{message}</Message>}
+        {error && <Message variant='danger'>{error}</Message>}
+        {loading && <Loader />}
         <Row>
             <Col md={3}>{/* empty column for spacing */}</Col>
             <Col md={6}>
@@ -104,27 +107,27 @@ const SignUpScreen = () => {
                         <Col md={6}>
                             <Form.Group controlId="first-name">
                                 <Form.Label>First Name</Form.Label>
-                                <Form.Control type="text" placeholder="First Name" value={name} onChange={(e) => setName(e.target.value)}></Form.Control>
+                                <Form.Control required type="text" placeholder="First Name" value={name} onChange={(e) => setName(e.target.value)}></Form.Control>
                             </Form.Group>
                         </Col>
                         <Col md={6}>
                             <Form.Group controlId="last-name">
                                 <Form.Label>Last Name</Form.Label>
-                                <Form.Control type="text" placeholder="Last Name" /*value={} onChange={}*/></Form.Control>
+                                <Form.Control required type="text" placeholder="Last Name" /*value={} onChange={}*/></Form.Control>
                             </Form.Group>
                         </Col>
                     </Row><br/>
                     <FormGroup controlId="email">
                         <Form.Label>Email Address</Form.Label>
-                        <Form.Control type="email" placeholder="example@email.com" value={email} onChange={(e) => setEmail(e.target.value)}></Form.Control>
+                        <Form.Control required type="email" placeholder="example@email.com" value={email} onChange={(e) => setEmail(e.target.value)}></Form.Control>
                     </FormGroup><br/>
                     <FormGroup controlId="password">
                         <Form.Label>Password <span id="password_error"></span> </Form.Label>
-                        <Form.Control type="password" placeholder="••••••••" value={password} onClick={(e) => onclick_password()} onChange={(e) => setPassword(e.target.value)}></Form.Control>
+                        <Form.Control required type="password" placeholder="••••••••" value={password} onClick={(e) => onclick_password()} onChange={(e) => setPassword(e.target.value)}></Form.Control>
                     </FormGroup>
                     <FormGroup controlId="confirm-password">
                         <Form.Label>Confirm Password</Form.Label>
-                        <Form.Control type="password" placeholder="••••••••" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)}></Form.Control>
+                        <Form.Control required type="password" placeholder="••••••••" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)}></Form.Control>
                     </FormGroup><br/>
 
                     <FormGroup controlId="isSeller">

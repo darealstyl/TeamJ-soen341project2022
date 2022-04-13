@@ -38,9 +38,9 @@ def registerUser(request):
             email=data['email'],
             password=make_password(data['password'])
             
-            
         )
-        if 'true' in  data['isSeller'] :
+        
+        if data['isSeller'] == 'true' :
             isSeller = True
         else:
             isSeller = False
