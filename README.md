@@ -10,7 +10,6 @@ Team Members:
 * Louisa-Lina Meziane -> louisa-lina -> 40133119
 * Zachary Bruce -> z-bruce -> 40136585
 * Wassim Nijaoui -> Nijaoui-Wassim -> 40121366
-* Zachary Bruce –> z-bruce -> 40136585
 
 Roles/Strengths:
 * Haris Mahmood: Experience with online customer applications. In charge of ReadMe file description for Sprint 1. In charge of aid with Sign up page development and cart. Documentation of Meeting Minutes
